@@ -20,13 +20,16 @@ public class ParserV1C implements IParserAdapter {
 		//.replaceAll("\\<.*?>", "")
 		StringUtils.deleteWhitespace(response);
 		
-		System.out.println("parse1>> "+response.indexOf("class=\"mlink\">"));
-		System.out.println("parse2>> "+response.indexOf("OFERTA DO DIA:"));
+		//System.out.println("parse1>> "+response.indexOf("class=\"mlink\">"));
+		//System.out.println("parse2>> "+response.indexOf("OFERTA DO DIA:"));
 		
 		response = response.substring(response.indexOf("class=\"mlink\">"), response.indexOf("OFERTA DO DIA:"));
 		
+		System.out.println(response.substring(response.indexOf("B>") + 2 //length do token
+				, response.indexOf("</B>")));
 		
-		System.out.println("parser test>>"+response);
+		
+		//System.out.println("parser test>>"+response);
 		
 		/*
 		HtmlCleaner hc = new HtmlCleaner();
@@ -35,12 +38,10 @@ public class ParserV1C implements IParserAdapter {
 		props.setTransResCharsToNCR(true);
 		props.setOmitComments(true);
 		TagNode node = hc.clean(response);
-		*/
 		
 		
 		
 		//TagNode[] nodes = node.getElementsByName("", true);
-		/*
 		try {
 			new PrettyXmlSerializer(props).writeToFile(node, "/home/fabio/Develop/parseado.xml", "utf-8");
 			new PrettyHtmlSerializer(props).writeToFile(node, "/home/fabio/Develop/htm_parseado.xml", "utf-8");
