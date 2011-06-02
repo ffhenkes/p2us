@@ -8,7 +8,7 @@ import org.apache.commons.httpclient.methods.PostMethod;
 public class SocketFactory {
 
 	//proof of concept
-	public void getData(){
+	public String getData(){
 				
 		String targetURL = "http://www.vale1convite.com.br/site/agenda/agenda.php?pegadata=4/6/2011&dia=01&mes=06&ano=2011&idcidade=1"; 
 		String paramname = "content";
@@ -29,7 +29,7 @@ public class SocketFactory {
 
 			//------------Get response as a string ----------
 			postResp = post.getResponseBodyAsString();
-			System.out.println("Response=======>"+postResp);
+			//System.out.println("Response=======>"+postResp.toString());
 		}
 		catch(Exception e)
 		{
@@ -42,6 +42,8 @@ public class SocketFactory {
 		}
 		
 		System.out.println("hacked");		
+		
+		return postResp;
 
 	}
 }
