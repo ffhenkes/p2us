@@ -29,6 +29,10 @@
 			
 			[Bindable]
 			private var lResult:ArrayCollection;
+			
+			[Bindable]
+			private var tot:String;
+			
 			private var http:HTTPConsumer;
 			private var map:Map;
 
@@ -42,6 +46,11 @@
 			}
 			
 			private function getResult(event:ResultEvent):void {
+				
+				tot = "Page: "+event.result.lfm.events.page+
+					  " of "+event.result.lfm.events.totalPages+
+					  " showing "+event.result.lfm.events.perPage+
+					  " events per page. \n Total events found: "+event.result.lfm.events.total;
 				
 				lResult = new ArrayCollection();
 				
@@ -120,6 +129,6 @@
 		<s:TextInput id="txtCity" width="600" height="50" enter="search()" />
 		<s:List id="listResult" width="100%" height="80%" dataProvider="{lResult}"/>
 	</s:Group>
-	<s:Group id="myMap" width="100%" height="100%" />
+	<s:Group id="myMap" width="100%" height="100%" toolTip="{tot}"/>
 	
 </s:Application>
