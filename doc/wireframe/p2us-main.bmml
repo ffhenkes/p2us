@@ -1,0 +1,31 @@
+<mockup version="1.0" skin="sketch" measuredW="1029" measuredH="773" mockupW="1024" mockupH="768">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="5" y="5" w="1024" h="768" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Join%20the%20party..%0Ahttp%3A//party2.us</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::TabBar" x="232" y="305" w="179" h="34" measuredW="235" measuredH="100" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <text>Party%2C%20City%2C%20Shared</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::SearchBox" x="232" y="339" w="639" h="-1" measuredW="65" measuredH="25" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>search</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="247" y="379" w="-1" h="-1" measuredW="284" measuredH="90" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>60</size>
+        <text>party2.us</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Link" x="411" y="314" w="-1" h="-1" measuredW="112" measuredH="25" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Share%20your%20party</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
