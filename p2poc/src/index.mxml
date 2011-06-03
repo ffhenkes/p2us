@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" minWidth="955" minHeight="600">
+	<fx:Script>
+		<![CDATA[
+			import com.demonsters.debugger.MonsterDebugger;
+			import com.google.maps.LatLng;
+			import com.google.maps.LatLngBounds;
+			import com.google.maps.Map;
+			import com.google.maps.MapEvent;
+			import com.google.maps.MapType;
+			import com.google.maps.controls.MapTypeControl;
+			import com.google.maps.overlays.Marker;
+			import com.google.maps.overlays.MarkerOptions;
+			import com.google.maps.styles.FillStyle;
+			import com.google.maps.styles.StrokeStyle;
+			
+			import consumer.HTTPConsumer;
+			
+			import flashx.textLayout.tlf_internal;
+			
+			import mx.collections.ArrayCollection;
+			import mx.controls.Alert;
+			import mx.rpc.events.FaultEvent;
+			import mx.rpc.events.ResultEvent;
+			
+			import pojo.LfmPojo;
+			
+			[Bindable]
+			private var lResult:ArrayCollection;
+			private var http:HTTPConsumer;
+			private var map:Map;
+
+			protected function search():void
+			{
+				MonsterDebugger.initialize(this);
+				
+				http = new HTTPConsumer(txtCity.text);
+				http.httpService.addEventListener(ResultEvent.RESULT, getResult);
+				http.httpService.send();
+			}
+			
+			private function getResult(event:ResultEvent):void {
+				
+				lResult = new ArrayCollection();
+				
+				for each (var o:Object in event.result.lfm.events.event as ArrayCollection) {
+					
+					var p:LfmPojo = new LfmPojo();
+					p.title = o.title;
+					p.startDate = o.startDate;
+					p.lat = o.venue.location.point.lat;
+					p.long = o.venue.location.point.long;
+					lResult.addItem(p);
+				}
+					
+				//map para mxml
+				/*
+				<maps:Map xmlns:maps="com.google.maps.*" id="map" mapevent_mapready="onMapReady(event)" width="100%" height="100%"
+				key="ABQIAAAAVPaFV4CWFvBIwGR4z-11txQhG5Sw1wCwxEUYTEao3gMfKdKjTxRRxitOL4LbuTt80kCKAXHlGCVyuQ" sensor="false" />
+				*/
+				
+				map = new Map();
+				map.key = "ABQIAAAAVPaFV4CWFvBIwGR4z-11txQhG5Sw1wCwxEUYTEao3gMfKdKjTxRRxitOL4LbuTt80kCKAXHlGCVyuQ";
+				map.sensor = "false";
+				map.setSize(new Point(myMap.width, myMap.height));
+				map.addEventListener(MapEvent.MAP_READY, onMapReady);
+				myMap.addElement(map);
+				
+			}
+
+
+			private function onMapReady(event:MapEvent):void {
+				
+				MonsterDebugger.trace(this, "mapReady");
+				
+				
+				if (lResult.length > 0) {
+					
+					var i:Number = 0;
+					for each (var p:LfmPojo in lResult) {
+						
+						var markerOptions:MarkerOptions = new MarkerOptions();
+						markerOptions.tooltip = p.title+" - "+p.startDate;
+						markerOptions.iconAlignment = MarkerOptions.ALIGN_HORIZONTAL_CENTER;
+						markerOptions.iconOffset = new Point(2, 2);
+						
+						if (i == 0) {
+							map.setCenter(new LatLng(p.lat, p.long), 13, MapType.NORMAL_MAP_TYPE);
+							var bounds:LatLngBounds = map.getLatLngBounds();
+							var southWest:LatLng = bounds.getSouthWest();
+							var northEast:LatLng = bounds.getNorthEast();
+							var lngSpan:Number = northEast.lng() - southWest.lng();
+							var latSpan:Number = northEast.lat() - southWest.lat();
+						}
+						
+						var latlng:LatLng = new LatLng(p.lat, p.long);
+						map.addOverlay(new Marker(latlng, markerOptions));
+						
+						i++;
+					}
+				}
+				
+			}
+
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		
+	</fx:Declarations>
+	<s:layout>
+		<s:VerticalLayout horizontalAlign="center" verticalAlign="middle" />
+	</s:layout>
+	
+	<s:Group width="100%" height="100%">
+		<s:layout>
+			<s:VerticalLayout verticalAlign="middle" horizontalAlign="center" />
+		</s:layout>
+		<s:TextInput id="txtCity" width="600" height="50" enter="search()" />
+		<s:List id="listResult" width="100%" height="80%" dataProvider="{lResult}"/>
+	</s:Group>
+	<s:Group id="myMap" width="100%" height="100%" />
+	
+</s:Application>
