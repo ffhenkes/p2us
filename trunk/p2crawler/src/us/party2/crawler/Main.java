@@ -18,8 +18,7 @@ public class Main {
 			ParserV1C parserVC1 = new ParserV1C();
 			parserVC1.setResponse(sb);
 			parserVC1.parse();
-		}
-		
+		}	
 		
 	}
 
