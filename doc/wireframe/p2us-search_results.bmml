@@ -63,7 +63,7 @@
     </control>
     <control controlID="17" controlTypeID="com.balsamiq.mockups::StickyNote" x="1038" y="84" w="272" h="258" measuredW="109" measuredH="123" zOrder="13" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>1%20-%20Magic%20button%20its%20awesome%21%0A%20%0A2%20-%20Dashboard%20shows%20the%20basic%20profile%20of%20an%20item%2C%20a%20list%20of%20my%20shared%20list%2C%20my%20%22dated%22%20list%20and%20my%20watches%20list.%0A%20%0AA%20watches%20list%20its%20a%20list%20filled%20with%20the%20amount%20of%20users%20who%20have%20%22dated%22%20parties.</text>
+        <text>1%20-%20Magic%20menu%20its%20awesome%21%0A%20%0A2%20-%20Dashboard%20shows%20the%20basic%20profile%20of%20an%20item%2C%20my%20shared%20list%2C%20my%20%22dated%22%20list%20and%20my%20watches%20list.%0A%20%0AA%20watches%20list%20its%20a%20list%20filled%20with%20the%20amount%20of%20users%20who%20have%20%22dated%22%20parties.</text>
       </controlProperties>
     </control>
   </controls>

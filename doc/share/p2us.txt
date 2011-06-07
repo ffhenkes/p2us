@@ -1,0 +1,25 @@
+Party2us (P2Us) é um sistema que permite ao usuário pesquisar por festas, baladas, shows,
+bares e inclusive festas privadas.
+A pesquisa pode ser realizada por cidade, tipo, e outro campo de pesquisa livre (citar outros).
+O resultado deve ter 2 tipos de saída para o usuário.
+O resultado deve ser plotado no mapa, cada apontador deverá possuir as seguintes 
+informações, Nome do Evento, tipo, endereco e a imagem se disponível.
+O resultado tambem deve ser exibido em uma lista ordenada por data.
+Esta lista de resultados deve ser semelhante a do gigero.
+
+P2Us vai permitir que qualquer usuário inclua a sua festa no sistema.
+Neste cadastro de festas, são obrigatórios as seguintes informações:
+Nome da Festa
+Data da Festa(para controlar validade)
+Endereço da Festa (para gerar geocode)
+Tipo da Festa(questões de pesquisa)
+Email do usuário
+Confirmação da Festa (o P2Us envia um email pedindo a confirmaçào
+da festa (link))
+(tweet your party (checkbox) to all P2Us followers) (to do it, the user must be a P2Us follower on twitter)
+
+O P2Us deve manter integração com os seguintes sistemas:
+LastFM (ws rest)
+V1C (http)
+BlueTicket (http)
+FestasUfsc (http ou ws)
