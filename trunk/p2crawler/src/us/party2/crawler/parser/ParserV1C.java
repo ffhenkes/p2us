@@ -78,12 +78,29 @@ public class ParserV1C implements IParserAdapter {
 			BeanV1C bean = new BeanV1C();
             String block = blocks.get(i);  
             
-            String event = block.substring(block.indexOf("class=\"mlink\"><B>"), block.indexOf("</B></A></TD>",block.indexOf("class=\"mlink\"><B>")));
+            String event = block.substring(block.indexOf("class=\"mlink\"><B>")+"class=\"mlink\"><B>".length(), block.indexOf("</B></A></TD>", block.indexOf("class=\"mlink\"><B>")));
             bean.setPartyName(event);
-            String atracao = block.substring(block.indexOf("<FONT class=\"topicoAgenda\">Atrações:"), block.indexOf("</B></A></TD>",block.indexOf("<FONT class=\"topicoAgenda\">Atrações:")));
-            bean.setPartyDetail(atracao);
-            String date = block.substring(block.indexOf("<TD><FONT class=\"topicoAgenda\"></FONT><FONT class=\"tpmedio\">"), block.indexOf("</FONT></TD>",block.indexOf("<TD><FONT class=\"topicoAgenda\"></FONT><FONT class=\"tpmedio\">")));
+                                    
+            String ini_block_place = block.substring(block.indexOf("<B>Local:"));
+            String place = ini_block_place.substring("<B>Local:".length(), ini_block_place.indexOf("</FONT>", ini_block_place.indexOf("<B>Local:")));
+            
+            String ini_block_atracao = block.substring(block.indexOf("<FONT class=\"topicoAgenda\">Atrações:"));
+            
+            //String atracao = ini_block_atracao.substring(ini_block_atracao.indexOf("<FONT class=\"topicoAgenda\">Atrações:".length()));
+            bean.setPartyDetail(ini_block_atracao);           
+
+            //imagem
+            String ini_block_img = block.substring(block.indexOf("src=\"../img/parceiros"));
+            String imgURL = ini_block_img.substring(ini_block_img.indexOf("src=")+"src=".length(),ini_block_img.indexOf(".gif")+".gif".length());
+            
+            //sempre dar um sub para o inicio do bloco de interesse
+            String ini_block_date = block.substring(block.indexOf("<TD><FONT class=\"topicoAgenda\"></FONT><FONT class=\"tpmedio\">"));            
+            String date = ini_block_date.substring(
+            		ini_block_date.indexOf("<TD><FONT class=\"topicoAgenda\"></FONT><FONT class=\"tpmedio\">")+"<TD><FONT class=\"topicoAgenda\"></FONT><FONT class=\"tpmedio\">".length(), 
+            		ini_block_date.indexOf("</FONT></TD>",ini_block_date.indexOf("<TD><FONT class=\"topicoAgenda\"></FONT><FONT class=\"tpmedio\">")));
+            
             bean.setPartyDate(date);
+            
 		} 
 	}
 }
