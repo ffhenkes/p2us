@@ -13,13 +13,14 @@ import org.htmlcleaner.TagNode;
 
 import us.party2.crawler.adapter.IParserAdapter;
 import us.party2.crawler.bean.BeanV1C;
+import us.party2.crawler.bean.IBean;
 
 public class ParserV1C implements IParserAdapter {
 
 	private String response;
 	
 	@Override
-	public void parse() {
+	public ArrayList<IBean> parse() {
 	
 		ArrayList<String> blocks = new ArrayList();
 		ArrayList<TagNode> nodes = new ArrayList();
@@ -49,7 +50,7 @@ public class ParserV1C implements IParserAdapter {
 			
 		}while(kernel.indexOf("<TD bgcolor=\"#F7F1DE\" align=\"left\" colspan=\"2\">",200)>0);
 			
-		parseBlocks(blocks);
+		return parseBlocks(blocks);
 		/*
 		//TagNode[] nodes = node.getElementsByName("", true);
 		try {
@@ -71,8 +72,8 @@ public class ParserV1C implements IParserAdapter {
 		this.response = response;
 	}
 
-	private void parseBlocks(ArrayList<String> blocks){
-		ArrayList<BeanV1C> beans = new ArrayList<BeanV1C>(); 
+	private ArrayList<IBean> parseBlocks(ArrayList<String> blocks){
+		ArrayList<IBean> beans = new ArrayList<IBean>(); 
 		
 		for (int i = 0; i < blocks.size(); i++) {  
 			BeanV1C bean = new BeanV1C();
@@ -101,6 +102,8 @@ public class ParserV1C implements IParserAdapter {
             
             bean.setPartyDate(date);
             
-		} 
+            beans.add(bean);
+		}
+		return beans;
 	}
 }
