@@ -35,7 +35,7 @@ public class ParserBlueTicket implements IParserAdapter {
 						kernel.indexOf("<div class='item_evento item_evento_1' style='height:97px'>"));
 				
 				blocks.add(block);
-				lateral = kernel.substring("<div class='item_evento item_evento_1' style='height:97px'>".length());
+				kernel = kernel.substring("<div class='item_evento item_evento_1' style='height:97px'>".length());
 			}
 			else{
 				String block = kernel.substring(
@@ -86,10 +86,24 @@ public class ParserBlueTicket implements IParserAdapter {
 
 	private ArrayList<IBean> parseLateralBlocks(ArrayList<String> blocks){
 		ArrayList<IBean> beans = new ArrayList<IBean>(); 
-		
 		for (int i = 0; i < blocks.size(); i++) {  
 			BeanBT bean = new BeanBT();
-            String block = blocks.get(i);  
+            String block = blocks.get(i);
+            
+            String eventId = block.substring(block.indexOf("?secao=Eventos&evento=")+"?secao=Eventos&evento=".length(),block.indexOf("' style",block.indexOf("?secao=Eventos&evento="))); 
+            bean.setBtId(eventId);
+            String eventImg = block.substring(block.indexOf("src=")+"src=".length(),block.indexOf("alt",block.indexOf("src=")));
+            bean.setPartyImage(eventImg);
+            String eventTitle = block.substring(block.indexOf("titulo_evento_lateral'>")+"titulo_evento_lateral'>".length(),block.indexOf("</p>"));
+            bean.setPartyName(eventTitle);            
+            String eventPlace = block.substring(block.indexOf("local_evento_lateral'>")+"local_evento_lateral'>".length(),block.indexOf("</p>",block.indexOf("local_evento_lateral'>")));
+            bean.setPartyPlace(eventPlace);
+            String subBlock = block.substring(block.indexOf("local_evento_lateral'>")+"local_evento_lateral'>".length());            
+            
+            String eventDate = subBlock.substring(subBlock.indexOf("local_evento_lateral'>")+"local_evento_lateral'>".length(),subBlock.indexOf("</p>",subBlock.indexOf("local_evento_lateral'>")));
+            bean.setPartyDate(eventDate);                       
+            beans.add(bean);
+
 		}
 		
 		return beans;
@@ -97,34 +111,20 @@ public class ParserBlueTicket implements IParserAdapter {
 	
 	private ArrayList<IBean> parseBlocks(ArrayList<String> blocks){
 		ArrayList<IBean> beans = new ArrayList<IBean>(); 
-		
 		for (int i = 0; i < blocks.size(); i++) {  
-			BeanV1C bean = new BeanV1C();
+			BeanBT bean = new BeanBT();
             String block = blocks.get(i);  
             
-            String event = block.substring(block.indexOf("class=\"mlink\"><B>")+"class=\"mlink\"><B>".length(), block.indexOf("</B></A></TD>", block.indexOf("class=\"mlink\"><B>")));
-            bean.setPartyName(event);
-                                    
-            String ini_block_place = block.substring(block.indexOf("<B>Local:"));
-            String place = ini_block_place.substring("<B>Local:".length(), ini_block_place.indexOf("</FONT>", ini_block_place.indexOf("<B>Local:")));
-            
-            String ini_block_atracao = block.substring(block.indexOf("<FONT class=\"topicoAgenda\">Atrações:"));
-            
-            //String atracao = ini_block_atracao.substring(ini_block_atracao.indexOf("<FONT class=\"topicoAgenda\">Atrações:".length()));
-            bean.setPartyDetail(ini_block_atracao);           
-
-            //imagem
-            String ini_block_img = block.substring(block.indexOf("src=\"../img/parceiros"));
-            String imgURL = ini_block_img.substring(ini_block_img.indexOf("src=")+"src=".length(),ini_block_img.indexOf(".gif")+".gif".length());
-            
-            //sempre dar um sub para o inicio do bloco de interesse
-            String ini_block_date = block.substring(block.indexOf("<TD><FONT class=\"topicoAgenda\"></FONT><FONT class=\"tpmedio\">"));            
-            String date = ini_block_date.substring(
-            		ini_block_date.indexOf("<TD><FONT class=\"topicoAgenda\"></FONT><FONT class=\"tpmedio\">")+"<TD><FONT class=\"topicoAgenda\"></FONT><FONT class=\"tpmedio\">".length(), 
-            		ini_block_date.indexOf("</FONT></TD>",ini_block_date.indexOf("<TD><FONT class=\"topicoAgenda\"></FONT><FONT class=\"tpmedio\">")));
-            
-            bean.setPartyDate(date);
-            
+            String eventId = block.substring(block.indexOf("?secao=Eventos&evento=")+"?secao=Eventos&evento=".length(),block.indexOf("'>",block.indexOf("?secao=Eventos&evento="))); 
+            bean.setBtId(eventId);
+            String eventImg = block.substring(block.indexOf("src=")+"src=".length(),block.indexOf("alt",block.indexOf("src=")));
+            bean.setPartyImage(eventImg);            
+            String eventTitle = block.substring(block.indexOf("titulo_evento_lista'>")+"titulo_evento_lista'>".length(),block.indexOf("</span>"));
+            bean.setPartyName(eventTitle);
+            String eventPlace = block.substring(block.indexOf("desc_evento_lista'><strong>")+"desc_evento_lista'><strong>".length(),block.indexOf("</strong>",block.indexOf("desc_evento_lista'>")));
+            bean.setPartyPlace(eventPlace);
+            String eventDate = block.substring(block.indexOf("data_evento_lista'>")+"data_evento_lista'>".length(),block.indexOf("</span>",block.indexOf("data_evento_lista'>")));            
+            bean.setPartyDate(eventDate);                       
             beans.add(bean);
 		}
 		return beans;
