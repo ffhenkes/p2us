@@ -47,9 +47,9 @@ public class SocketFactory {
 
 	}
 	
-	public String getBTData(){
+	public String getBTData(String cityId){
 		
-		String targetURL = "http://www.blueticket.com.br/?secao=Eventos&cidade=1&data_inicial=&data_final="; 
+		String targetURL = "http://www.blueticket.com.br/?secao=Eventos&cidade="+cityId+"&data_inicial=&data_final="; 
 		String paramname = "content";
 		
 		PostMethod post = new PostMethod(targetURL);
