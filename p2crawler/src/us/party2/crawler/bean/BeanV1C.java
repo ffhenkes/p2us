@@ -2,7 +2,7 @@ package us.party2.crawler.bean;
 
 import java.util.Date;
 
-public class BeanV1C {
+public class BeanV1C implements IBean {
 	private String partyName;
 	private String partyDate;	
 	private PartyPlace partyPlace;
@@ -54,7 +54,7 @@ class PartyType{
 	
 }
 
-class PartyPlace{
+class PartyPlace implements IBean{
 	private String placeName;
 	private String placeAddress;
 	

@@ -46,4 +46,43 @@ public class SocketFactory {
 		return postResp;
 
 	}
+	
+	public String getBTData(){
+		
+		String targetURL = "http://www.blueticket.com.br/?secao=Eventos&cidade=1&data_inicial=&data_final="; 
+		String paramname = "content";
+		
+		PostMethod post = new PostMethod(targetURL);
+		
+		HttpClient httpclient = new HttpClient();
+		PrintWriter myout = null;
+		String postResp = "";
+		
+		// Execute http request
+		try 
+		{
+			long t1 = System.currentTimeMillis();
+			int result = httpclient.executeMethod(post);
+			System.out.println("HTTP Response status code: " + result);
+			System.out.println(">> Time taken " + (System.currentTimeMillis() - t1));
+
+			//------------Get response as a string ----------
+			postResp = post.getResponseBodyAsString();
+			System.out.println("Response=======>"+postResp.toString());
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}	
+		finally 
+		{
+			//myout.close();
+			post.releaseConnection();
+		}
+		
+		System.out.println("BT hacked");		
+		
+		return postResp;
+
+	}
 }
