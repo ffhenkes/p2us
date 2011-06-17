@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="windows-1252"?>
-<XMI xmi.version="1.1" xmlns:UML="omg.org/UML1.3" timestamp="2011-06-17 10:29:30">
+<XMI xmi.version="1.1" xmlns:UML="omg.org/UML1.3" timestamp="2011-06-17 15:18:06">
 	<XMI.header>
 		<XMI.documentation>
 			<XMI.exporter>Enterprise Architect</XMI.exporter>
@@ -1673,7 +1673,7 @@
 																<UML:TaggedValue tag="version" value="1.0"/>
 																<UML:TaggedValue tag="package" value="EAPK_1DA9B19E_981E_11e0_E998_0023AEEA7726"/>
 																<UML:TaggedValue tag="date_created" value="2011-06-16 10:40:30"/>
-																<UML:TaggedValue tag="date_modified" value="2011-06-16 23:48:20"/>
+																<UML:TaggedValue tag="date_modified" value="2011-06-17 14:12:10"/>
 																<UML:TaggedValue tag="genfile" value="Z:\home\fabio\Develop\mock_code\System\Model\Adapter\IAMFRequesterAdapter.as"/>
 																<UML:TaggedValue tag="gentype" value="ActionScript"/>
 																<UML:TaggedValue tag="tagged" value="0"/>
@@ -1852,28 +1852,6 @@
 																<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 															</UML:ModelElement.taggedValue>
 															<UML:Classifier.feature>
-																<UML:Attribute name="remoteObject" changeable="none" visibility="private" ownerScope="instance" targetScope="instance">
-																	<UML:Attribute.initialValue>
-																		<UML:Expression/>
-																	</UML:Attribute.initialValue>
-																	<UML:StructuralFeature.type>
-																		<UML:Classifier xmi.idref="EAID_85D182B4_988D_11e0_E998_0023AEEA7726"/>
-																	</UML:StructuralFeature.type>
-																	<UML:ModelElement.taggedValue>
-																		<UML:TaggedValue tag="type" value="AMFConsumer"/>
-																		<UML:TaggedValue tag="derived" value="0"/>
-																		<UML:TaggedValue tag="containment" value="Not Specified"/>
-																		<UML:TaggedValue tag="ordered" value="0"/>
-																		<UML:TaggedValue tag="collection" value="false"/>
-																		<UML:TaggedValue tag="position" value="0"/>
-																		<UML:TaggedValue tag="lowerBound" value="1"/>
-																		<UML:TaggedValue tag="upperBound" value="1"/>
-																		<UML:TaggedValue tag="duplicates" value="0"/>
-																		<UML:TaggedValue tag="ea_guid" value="{9991158A-98E2-11e0-E998-0023AEEA7726}"/>
-																		<UML:TaggedValue tag="ea_localid" value="96"/>
-																		<UML:TaggedValue tag="styleex" value="IsLiteral=0;volatile=0;"/>
-																	</UML:ModelElement.taggedValue>
-																</UML:Attribute>
 																<UML:Operation name="createBlueTicketAMFRequester" visibility="public" ownerScope="instance" isQuery="false" concurrency="sequential">
 																	<UML:ModelElement.taggedValue>
 																		<UML:TaggedValue tag="type" value="Void"/>
@@ -1896,21 +1874,6 @@
 																				<UML:TaggedValue tag="type" value="Void"/>
 																				<UML:TaggedValue tag="const" value="0"/>
 																				<UML:TaggedValue tag="ea_guid" value="{RETURNID-982A-11e0-E998-0023AEEA7726}"/>
-																			</UML:ModelElement.taggedValue>
-																			<UML:Parameter.defaultValue>
-																				<UML:Expression/>
-																			</UML:Parameter.defaultValue>
-																		</UML:Parameter>
-																		<UML:Parameter name="remote" kind="in" visibility="public">
-																			<UML:Parameter.type>
-																				<UML:Classifier xmi.idref="EAID_85D182B4_988D_11e0_E998_0023AEEA7726"/>
-																			</UML:Parameter.type>
-																			<UML:ModelElement.taggedValue>
-																				<UML:TaggedValue tag="pos" value="0"/>
-																				<UML:TaggedValue tag="type" value="AMFConsumer"/>
-																				<UML:TaggedValue tag="const" value="0"/>
-																				<UML:TaggedValue tag="classifier" value="EAID_85D182B4_988D_11e0_E998_0023AEEA7726"/>
-																				<UML:TaggedValue tag="ea_guid" value="{BCBF540E-98E2-11e0-E998-0023AEEA7726}"/>
 																			</UML:ModelElement.taggedValue>
 																			<UML:Parameter.defaultValue>
 																				<UML:Expression/>
@@ -1940,21 +1903,6 @@
 																				<UML:TaggedValue tag="type" value="Void"/>
 																				<UML:TaggedValue tag="const" value="0"/>
 																				<UML:TaggedValue tag="ea_guid" value="{RETURNID-982A-11e0-E998-0023AEEA7726}"/>
-																			</UML:ModelElement.taggedValue>
-																			<UML:Parameter.defaultValue>
-																				<UML:Expression/>
-																			</UML:Parameter.defaultValue>
-																		</UML:Parameter>
-																		<UML:Parameter name="remote" kind="in" visibility="public">
-																			<UML:Parameter.type>
-																				<UML:Classifier xmi.idref="EAID_85D182B4_988D_11e0_E998_0023AEEA7726"/>
-																			</UML:Parameter.type>
-																			<UML:ModelElement.taggedValue>
-																				<UML:TaggedValue tag="pos" value="0"/>
-																				<UML:TaggedValue tag="type" value="AMFConsumer"/>
-																				<UML:TaggedValue tag="const" value="0"/>
-																				<UML:TaggedValue tag="classifier" value="EAID_85D182B4_988D_11e0_E998_0023AEEA7726"/>
-																				<UML:TaggedValue tag="ea_guid" value="{D6E93138-98E2-11e0-E998-0023AEEA7726}"/>
 																			</UML:ModelElement.taggedValue>
 																			<UML:Parameter.defaultValue>
 																				<UML:Expression/>
@@ -2098,28 +2046,6 @@
 																<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 															</UML:ModelElement.taggedValue>
 															<UML:Classifier.feature>
-																<UML:Attribute name="httpService" changeable="none" visibility="private" ownerScope="instance" targetScope="instance">
-																	<UML:Attribute.initialValue>
-																		<UML:Expression/>
-																	</UML:Attribute.initialValue>
-																	<UML:StructuralFeature.type>
-																		<UML:Classifier xmi.idref="EAID_B429A716_9835_11e0_E998_0023AEEA7726"/>
-																	</UML:StructuralFeature.type>
-																	<UML:ModelElement.taggedValue>
-																		<UML:TaggedValue tag="type" value="HTTPServiceConsumer"/>
-																		<UML:TaggedValue tag="derived" value="0"/>
-																		<UML:TaggedValue tag="containment" value="Not Specified"/>
-																		<UML:TaggedValue tag="ordered" value="0"/>
-																		<UML:TaggedValue tag="collection" value="false"/>
-																		<UML:TaggedValue tag="position" value="0"/>
-																		<UML:TaggedValue tag="lowerBound" value="1"/>
-																		<UML:TaggedValue tag="upperBound" value="1"/>
-																		<UML:TaggedValue tag="duplicates" value="0"/>
-																		<UML:TaggedValue tag="ea_guid" value="{7339C8A6-98E1-11e0-E998-0023AEEA7726}"/>
-																		<UML:TaggedValue tag="ea_localid" value="94"/>
-																		<UML:TaggedValue tag="styleex" value="IsLiteral=0;volatile=0;"/>
-																	</UML:ModelElement.taggedValue>
-																</UML:Attribute>
 																<UML:Operation name="createLfmCityRequester" visibility="public" ownerScope="instance" isQuery="false" concurrency="sequential">
 																	<UML:ModelElement.taggedValue>
 																		<UML:TaggedValue tag="type" value="IRESTRequesterAdapter"/>
@@ -2148,16 +2074,29 @@
 																				<UML:Expression/>
 																			</UML:Parameter.defaultValue>
 																		</UML:Parameter>
-																		<UML:Parameter name="consumer" kind="in" visibility="public">
+																		<UML:Parameter name="city" kind="in" visibility="public">
 																			<UML:Parameter.type>
-																				<UML:Classifier xmi.idref="EAID_B429A716_9835_11e0_E998_0023AEEA7726"/>
+																				<UML:Classifier xmi.idref="eaxmiid3"/>
 																			</UML:Parameter.type>
 																			<UML:ModelElement.taggedValue>
 																				<UML:TaggedValue tag="pos" value="0"/>
-																				<UML:TaggedValue tag="type" value="HTTPServiceConsumer"/>
+																				<UML:TaggedValue tag="type" value="String"/>
 																				<UML:TaggedValue tag="const" value="0"/>
-																				<UML:TaggedValue tag="classifier" value="EAID_B429A716_9835_11e0_E998_0023AEEA7726"/>
 																				<UML:TaggedValue tag="ea_guid" value="{ACC8BA78-98E1-11e0-E998-0023AEEA7726}"/>
+																			</UML:ModelElement.taggedValue>
+																			<UML:Parameter.defaultValue>
+																				<UML:Expression/>
+																			</UML:Parameter.defaultValue>
+																		</UML:Parameter>
+																		<UML:Parameter name="page" kind="in" visibility="public">
+																			<UML:Parameter.type>
+																				<UML:Classifier xmi.idref="eaxmiid4"/>
+																			</UML:Parameter.type>
+																			<UML:ModelElement.taggedValue>
+																				<UML:TaggedValue tag="pos" value="1"/>
+																				<UML:TaggedValue tag="type" value="Number"/>
+																				<UML:TaggedValue tag="const" value="0"/>
+																				<UML:TaggedValue tag="ea_guid" value="{1C5F52FA-990C-11e0-E998-0023AEEA7726}"/>
 																			</UML:ModelElement.taggedValue>
 																			<UML:Parameter.defaultValue>
 																				<UML:Expression/>
@@ -2193,16 +2132,29 @@
 																				<UML:Expression/>
 																			</UML:Parameter.defaultValue>
 																		</UML:Parameter>
-																		<UML:Parameter name="consumer" kind="in" visibility="public">
+																		<UML:Parameter name="party" kind="in" visibility="public">
 																			<UML:Parameter.type>
-																				<UML:Classifier xmi.idref="EAID_B429A716_9835_11e0_E998_0023AEEA7726"/>
+																				<UML:Classifier xmi.idref="eaxmiid3"/>
 																			</UML:Parameter.type>
 																			<UML:ModelElement.taggedValue>
 																				<UML:TaggedValue tag="pos" value="0"/>
-																				<UML:TaggedValue tag="type" value="HTTPServiceConsumer"/>
+																				<UML:TaggedValue tag="type" value="String"/>
 																				<UML:TaggedValue tag="const" value="0"/>
-																				<UML:TaggedValue tag="classifier" value="EAID_B429A716_9835_11e0_E998_0023AEEA7726"/>
-																				<UML:TaggedValue tag="ea_guid" value="{B8CBC93C-98E1-11e0-E998-0023AEEA7726}"/>
+																				<UML:TaggedValue tag="ea_guid" value="{2F920840-990C-11e0-E998-0023AEEA7726}"/>
+																			</UML:ModelElement.taggedValue>
+																			<UML:Parameter.defaultValue>
+																				<UML:Expression/>
+																			</UML:Parameter.defaultValue>
+																		</UML:Parameter>
+																		<UML:Parameter name="page" kind="in" visibility="public">
+																			<UML:Parameter.type>
+																				<UML:Classifier xmi.idref="eaxmiid4"/>
+																			</UML:Parameter.type>
+																			<UML:ModelElement.taggedValue>
+																				<UML:TaggedValue tag="pos" value="1"/>
+																				<UML:TaggedValue tag="type" value="Number"/>
+																				<UML:TaggedValue tag="const" value="0"/>
+																				<UML:TaggedValue tag="ea_guid" value="{2F92B042-990C-11e0-E998-0023AEEA7726}"/>
 																			</UML:ModelElement.taggedValue>
 																			<UML:Parameter.defaultValue>
 																				<UML:Expression/>
@@ -2367,7 +2319,7 @@
 																<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 															</UML:ModelElement.taggedValue>
 															<UML:Classifier.feature>
-																<UML:Attribute name="httpService" changeable="none" visibility="private" ownerScope="instance" targetScope="instance">
+																<UML:Attribute name="consumer" changeable="none" visibility="private" ownerScope="instance" targetScope="instance">
 																	<UML:Attribute.initialValue>
 																		<UML:Expression/>
 																	</UML:Attribute.initialValue>
@@ -2481,6 +2433,75 @@
 																		</UML:Parameter>
 																	</UML:BehavioralFeature.parameter>
 																</UML:Operation>
+																<UML:Operation name="consumer" visibility="public" ownerScope="instance" isQuery="false" concurrency="sequential">
+																	<UML:ModelElement.stereotype>
+																		<UML:Stereotype name="property set"/>
+																	</UML:ModelElement.stereotype>
+																	<UML:ModelElement.taggedValue>
+																		<UML:TaggedValue tag="type" value="Void"/>
+																		<UML:TaggedValue tag="const" value="false"/>
+																		<UML:TaggedValue tag="stereotype" value="property set"/>
+																		<UML:TaggedValue tag="synchronised" value="0"/>
+																		<UML:TaggedValue tag="concurrency" value="Sequential"/>
+																		<UML:TaggedValue tag="position" value="2"/>
+																		<UML:TaggedValue tag="returnarray" value="0"/>
+																		<UML:TaggedValue tag="pure" value="0"/>
+																		<UML:TaggedValue tag="ea_guid" value="{516FE626-990C-11e0-E998-0023AEEA7726}"/>
+																		<UML:TaggedValue tag="ea_localid" value="103"/>
+																		<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={62E79778-990C-11e0-E998-0023AEEA7726}$XID;$NAM=Stereotypes$NAM;$TYP=operation property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=property set;GUID={38796712-97BF-11e0-E998-0023AEEA7726};@ENDSTEREO;$DES;$CLT={516FE626-990C-11e0-E998-0023AEEA7726}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+																	</UML:ModelElement.taggedValue>
+																	<UML:BehavioralFeature.parameter>
+																		<UML:Parameter kind="return" visibility="public">
+																			<UML:Parameter.type>
+																				<UML:Classifier xmi.idref="eaxmiid2"/>
+																			</UML:Parameter.type>
+																			<UML:ModelElement.taggedValue>
+																				<UML:TaggedValue tag="pos" value="0"/>
+																				<UML:TaggedValue tag="type" value="Void"/>
+																				<UML:TaggedValue tag="const" value="0"/>
+																				<UML:TaggedValue tag="ea_guid" value="{RETURNID-990C-11e0-E998-0023AEEA7726}"/>
+																			</UML:ModelElement.taggedValue>
+																			<UML:Parameter.defaultValue>
+																				<UML:Expression/>
+																			</UML:Parameter.defaultValue>
+																		</UML:Parameter>
+																	</UML:BehavioralFeature.parameter>
+																</UML:Operation>
+																<UML:Operation name="consumer" visibility="public" ownerScope="instance" isQuery="false" concurrency="sequential">
+																	<UML:ModelElement.stereotype>
+																		<UML:Stereotype name="property get"/>
+																	</UML:ModelElement.stereotype>
+																	<UML:ModelElement.taggedValue>
+																		<UML:TaggedValue tag="type" value="HTTPServiceConsumer"/>
+																		<UML:TaggedValue tag="const" value="false"/>
+																		<UML:TaggedValue tag="stereotype" value="property get"/>
+																		<UML:TaggedValue tag="synchronised" value="0"/>
+																		<UML:TaggedValue tag="concurrency" value="Sequential"/>
+																		<UML:TaggedValue tag="position" value="3"/>
+																		<UML:TaggedValue tag="returnarray" value="0"/>
+																		<UML:TaggedValue tag="pure" value="0"/>
+																		<UML:TaggedValue tag="ea_guid" value="{6EF4FFCE-990C-11e0-E998-0023AEEA7726}"/>
+																		<UML:TaggedValue tag="ea_localid" value="104"/>
+																		<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={7A11ED4A-990C-11e0-E998-0023AEEA7726}$XID;$NAM=Stereotypes$NAM;$TYP=operation property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=property get;GUID={387A891C-97BF-11e0-E998-0023AEEA7726};@ENDSTEREO;$DES;$CLT={6EF4FFCE-990C-11e0-E998-0023AEEA7726}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+																	</UML:ModelElement.taggedValue>
+																	<UML:BehavioralFeature.parameter>
+																		<UML:Parameter kind="return" visibility="public">
+																			<UML:Parameter.type>
+																				<UML:Classifier xmi.idref="EAID_B429A716_9835_11e0_E998_0023AEEA7726"/>
+																			</UML:Parameter.type>
+																			<UML:ModelElement.taggedValue>
+																				<UML:TaggedValue tag="pos" value="0"/>
+																				<UML:TaggedValue tag="type" value="HTTPServiceConsumer"/>
+																				<UML:TaggedValue tag="const" value="0"/>
+																				<UML:TaggedValue tag="classifier" value="EAID_B429A716_9835_11e0_E998_0023AEEA7726"/>
+																				<UML:TaggedValue tag="ea_guid" value="{RETURNID-990C-11e0-E998-0023AEEA7726}"/>
+																			</UML:ModelElement.taggedValue>
+																			<UML:Parameter.defaultValue>
+																				<UML:Expression/>
+																			</UML:Parameter.defaultValue>
+																		</UML:Parameter>
+																	</UML:BehavioralFeature.parameter>
+																</UML:Operation>
 															</UML:Classifier.feature>
 														</UML:Class>
 														<UML:Dependency client="EAID_D5D1AE44_9827_11e0_E998_0023AEEA7726" supplier="EAID_4ED456EC_988D_11e0_E998_0023AEEA7726" xmi.id="EAID_B75C0392_98E5_11e0_E998_0023AEEA7726" visibility="public">
@@ -2543,7 +2564,7 @@
 																<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 															</UML:ModelElement.taggedValue>
 															<UML:Classifier.feature>
-																<UML:Attribute name="httpService" changeable="none" visibility="private" ownerScope="instance" targetScope="instance">
+																<UML:Attribute name="consumer" changeable="none" visibility="private" ownerScope="instance" targetScope="instance">
 																	<UML:Attribute.initialValue>
 																		<UML:Expression/>
 																	</UML:Attribute.initialValue>
@@ -2657,6 +2678,90 @@
 																		</UML:Parameter>
 																	</UML:BehavioralFeature.parameter>
 																</UML:Operation>
+																<UML:Operation name="consumer" visibility="public" ownerScope="instance" isQuery="false" concurrency="sequential">
+																	<UML:ModelElement.stereotype>
+																		<UML:Stereotype name="property set"/>
+																	</UML:ModelElement.stereotype>
+																	<UML:ModelElement.taggedValue>
+																		<UML:TaggedValue tag="type" value="Void"/>
+																		<UML:TaggedValue tag="const" value="false"/>
+																		<UML:TaggedValue tag="stereotype" value="property set"/>
+																		<UML:TaggedValue tag="synchronised" value="0"/>
+																		<UML:TaggedValue tag="concurrency" value="Sequential"/>
+																		<UML:TaggedValue tag="position" value="2"/>
+																		<UML:TaggedValue tag="returnarray" value="0"/>
+																		<UML:TaggedValue tag="pure" value="0"/>
+																		<UML:TaggedValue tag="ea_guid" value="{852AAEBA-990C-11e0-E998-0023AEEA7726}"/>
+																		<UML:TaggedValue tag="ea_localid" value="105"/>
+																		<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={954EAE5E-990C-11e0-E998-0023AEEA7726}$XID;$NAM=Stereotypes$NAM;$TYP=operation property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=property set;GUID={38796712-97BF-11e0-E998-0023AEEA7726};@ENDSTEREO;$DES;$CLT={852AAEBA-990C-11e0-E998-0023AEEA7726}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+																	</UML:ModelElement.taggedValue>
+																	<UML:BehavioralFeature.parameter>
+																		<UML:Parameter kind="return" visibility="public">
+																			<UML:Parameter.type>
+																				<UML:Classifier xmi.idref="eaxmiid2"/>
+																			</UML:Parameter.type>
+																			<UML:ModelElement.taggedValue>
+																				<UML:TaggedValue tag="pos" value="0"/>
+																				<UML:TaggedValue tag="type" value="Void"/>
+																				<UML:TaggedValue tag="const" value="0"/>
+																				<UML:TaggedValue tag="ea_guid" value="{RETURNID-990C-11e0-E998-0023AEEA7726}"/>
+																			</UML:ModelElement.taggedValue>
+																			<UML:Parameter.defaultValue>
+																				<UML:Expression/>
+																			</UML:Parameter.defaultValue>
+																		</UML:Parameter>
+																		<UML:Parameter name="c" kind="in" visibility="public">
+																			<UML:Parameter.type>
+																				<UML:Classifier xmi.idref="EAID_B429A716_9835_11e0_E998_0023AEEA7726"/>
+																			</UML:Parameter.type>
+																			<UML:ModelElement.taggedValue>
+																				<UML:TaggedValue tag="pos" value="0"/>
+																				<UML:TaggedValue tag="type" value="HTTPServiceConsumer"/>
+																				<UML:TaggedValue tag="const" value="0"/>
+																				<UML:TaggedValue tag="classifier" value="EAID_B429A716_9835_11e0_E998_0023AEEA7726"/>
+																				<UML:TaggedValue tag="ea_guid" value="{954F5E80-990C-11e0-E998-0023AEEA7726}"/>
+																			</UML:ModelElement.taggedValue>
+																			<UML:Parameter.defaultValue>
+																				<UML:Expression/>
+																			</UML:Parameter.defaultValue>
+																		</UML:Parameter>
+																	</UML:BehavioralFeature.parameter>
+																</UML:Operation>
+																<UML:Operation name="consumer" visibility="public" ownerScope="instance" isQuery="false" concurrency="sequential">
+																	<UML:ModelElement.stereotype>
+																		<UML:Stereotype name="property get"/>
+																	</UML:ModelElement.stereotype>
+																	<UML:ModelElement.taggedValue>
+																		<UML:TaggedValue tag="type" value="HTTPServiceConsumer"/>
+																		<UML:TaggedValue tag="const" value="false"/>
+																		<UML:TaggedValue tag="stereotype" value="property get"/>
+																		<UML:TaggedValue tag="synchronised" value="0"/>
+																		<UML:TaggedValue tag="concurrency" value="Sequential"/>
+																		<UML:TaggedValue tag="position" value="3"/>
+																		<UML:TaggedValue tag="returnarray" value="0"/>
+																		<UML:TaggedValue tag="pure" value="0"/>
+																		<UML:TaggedValue tag="ea_guid" value="{9745EAF6-990C-11e0-E998-0023AEEA7726}"/>
+																		<UML:TaggedValue tag="ea_localid" value="106"/>
+																		<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={AA3FE094-990C-11e0-E998-0023AEEA7726}$XID;$NAM=Stereotypes$NAM;$TYP=operation property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=property get;GUID={387A891C-97BF-11e0-E998-0023AEEA7726};@ENDSTEREO;$DES;$CLT={9745EAF6-990C-11e0-E998-0023AEEA7726}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+																	</UML:ModelElement.taggedValue>
+																	<UML:BehavioralFeature.parameter>
+																		<UML:Parameter kind="return" visibility="public">
+																			<UML:Parameter.type>
+																				<UML:Classifier xmi.idref="EAID_B429A716_9835_11e0_E998_0023AEEA7726"/>
+																			</UML:Parameter.type>
+																			<UML:ModelElement.taggedValue>
+																				<UML:TaggedValue tag="pos" value="0"/>
+																				<UML:TaggedValue tag="type" value="HTTPServiceConsumer"/>
+																				<UML:TaggedValue tag="const" value="0"/>
+																				<UML:TaggedValue tag="classifier" value="EAID_B429A716_9835_11e0_E998_0023AEEA7726"/>
+																				<UML:TaggedValue tag="ea_guid" value="{RETURNID-990C-11e0-E998-0023AEEA7726}"/>
+																			</UML:ModelElement.taggedValue>
+																			<UML:Parameter.defaultValue>
+																				<UML:Expression/>
+																			</UML:Parameter.defaultValue>
+																		</UML:Parameter>
+																	</UML:BehavioralFeature.parameter>
+																</UML:Operation>
 															</UML:Classifier.feature>
 														</UML:Class>
 														<UML:Dependency client="EAID_DF27E774_9827_11e0_E998_0023AEEA7726" supplier="EAID_4ED456EC_988D_11e0_E998_0023AEEA7726" xmi.id="EAID_B966403A_98E5_11e0_E998_0023AEEA7726" visibility="public">
@@ -2719,7 +2824,7 @@
 																<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 															</UML:ModelElement.taggedValue>
 															<UML:Classifier.feature>
-																<UML:Attribute name="remoteObject" changeable="none" visibility="private" ownerScope="instance" targetScope="instance">
+																<UML:Attribute name="consumer" changeable="none" visibility="private" ownerScope="instance" targetScope="instance">
 																	<UML:Attribute.initialValue>
 																		<UML:Expression/>
 																	</UML:Attribute.initialValue>
@@ -2794,6 +2899,90 @@
 																		</UML:Parameter>
 																	</UML:BehavioralFeature.parameter>
 																</UML:Operation>
+																<UML:Operation name="consumer" visibility="public" ownerScope="instance" isQuery="false" concurrency="sequential">
+																	<UML:ModelElement.stereotype>
+																		<UML:Stereotype name="property set"/>
+																	</UML:ModelElement.stereotype>
+																	<UML:ModelElement.taggedValue>
+																		<UML:TaggedValue tag="type" value="Void"/>
+																		<UML:TaggedValue tag="const" value="false"/>
+																		<UML:TaggedValue tag="stereotype" value="property set"/>
+																		<UML:TaggedValue tag="synchronised" value="0"/>
+																		<UML:TaggedValue tag="concurrency" value="Sequential"/>
+																		<UML:TaggedValue tag="position" value="1"/>
+																		<UML:TaggedValue tag="returnarray" value="0"/>
+																		<UML:TaggedValue tag="pure" value="0"/>
+																		<UML:TaggedValue tag="ea_guid" value="{87F7EA80-990D-11e0-E998-0023AEEA7726}"/>
+																		<UML:TaggedValue tag="ea_localid" value="111"/>
+																		<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={A0F02D72-990D-11e0-E998-0023AEEA7726}$XID;$NAM=Stereotypes$NAM;$TYP=operation property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=property set;GUID={38796712-97BF-11e0-E998-0023AEEA7726};@ENDSTEREO;$DES;$CLT={87F7EA80-990D-11e0-E998-0023AEEA7726}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+																	</UML:ModelElement.taggedValue>
+																	<UML:BehavioralFeature.parameter>
+																		<UML:Parameter kind="return" visibility="public">
+																			<UML:Parameter.type>
+																				<UML:Classifier xmi.idref="eaxmiid2"/>
+																			</UML:Parameter.type>
+																			<UML:ModelElement.taggedValue>
+																				<UML:TaggedValue tag="pos" value="0"/>
+																				<UML:TaggedValue tag="type" value="Void"/>
+																				<UML:TaggedValue tag="const" value="0"/>
+																				<UML:TaggedValue tag="ea_guid" value="{RETURNID-990D-11e0-E998-0023AEEA7726}"/>
+																			</UML:ModelElement.taggedValue>
+																			<UML:Parameter.defaultValue>
+																				<UML:Expression/>
+																			</UML:Parameter.defaultValue>
+																		</UML:Parameter>
+																		<UML:Parameter name="c" kind="in" visibility="public">
+																			<UML:Parameter.type>
+																				<UML:Classifier xmi.idref="EAID_85D182B4_988D_11e0_E998_0023AEEA7726"/>
+																			</UML:Parameter.type>
+																			<UML:ModelElement.taggedValue>
+																				<UML:TaggedValue tag="pos" value="0"/>
+																				<UML:TaggedValue tag="type" value="AMFConsumer"/>
+																				<UML:TaggedValue tag="const" value="0"/>
+																				<UML:TaggedValue tag="classifier" value="EAID_85D182B4_988D_11e0_E998_0023AEEA7726"/>
+																				<UML:TaggedValue tag="ea_guid" value="{A0F0D7C2-990D-11e0-E998-0023AEEA7726}"/>
+																			</UML:ModelElement.taggedValue>
+																			<UML:Parameter.defaultValue>
+																				<UML:Expression/>
+																			</UML:Parameter.defaultValue>
+																		</UML:Parameter>
+																	</UML:BehavioralFeature.parameter>
+																</UML:Operation>
+																<UML:Operation name="consumer" visibility="public" ownerScope="instance" isQuery="false" concurrency="sequential">
+																	<UML:ModelElement.stereotype>
+																		<UML:Stereotype name="property get"/>
+																	</UML:ModelElement.stereotype>
+																	<UML:ModelElement.taggedValue>
+																		<UML:TaggedValue tag="type" value="AMFConsumer"/>
+																		<UML:TaggedValue tag="const" value="false"/>
+																		<UML:TaggedValue tag="stereotype" value="property get"/>
+																		<UML:TaggedValue tag="synchronised" value="0"/>
+																		<UML:TaggedValue tag="concurrency" value="Sequential"/>
+																		<UML:TaggedValue tag="position" value="2"/>
+																		<UML:TaggedValue tag="returnarray" value="0"/>
+																		<UML:TaggedValue tag="pure" value="0"/>
+																		<UML:TaggedValue tag="ea_guid" value="{5C94462C-990D-11e0-E998-0023AEEA7726}"/>
+																		<UML:TaggedValue tag="ea_localid" value="109"/>
+																		<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={68C3B0CC-990D-11e0-E998-0023AEEA7726}$XID;$NAM=Stereotypes$NAM;$TYP=operation property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=property get;GUID={387A891C-97BF-11e0-E998-0023AEEA7726};@ENDSTEREO;$DES;$CLT={5C94462C-990D-11e0-E998-0023AEEA7726}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+																	</UML:ModelElement.taggedValue>
+																	<UML:BehavioralFeature.parameter>
+																		<UML:Parameter kind="return" visibility="public">
+																			<UML:Parameter.type>
+																				<UML:Classifier xmi.idref="EAID_85D182B4_988D_11e0_E998_0023AEEA7726"/>
+																			</UML:Parameter.type>
+																			<UML:ModelElement.taggedValue>
+																				<UML:TaggedValue tag="pos" value="0"/>
+																				<UML:TaggedValue tag="type" value="AMFConsumer"/>
+																				<UML:TaggedValue tag="const" value="0"/>
+																				<UML:TaggedValue tag="classifier" value="EAID_85D182B4_988D_11e0_E998_0023AEEA7726"/>
+																				<UML:TaggedValue tag="ea_guid" value="{RETURNID-990D-11e0-E998-0023AEEA7726}"/>
+																			</UML:ModelElement.taggedValue>
+																			<UML:Parameter.defaultValue>
+																				<UML:Expression/>
+																			</UML:Parameter.defaultValue>
+																		</UML:Parameter>
+																	</UML:BehavioralFeature.parameter>
+																</UML:Operation>
 															</UML:Classifier.feature>
 														</UML:Class>
 														<UML:Class name="BlueTicketAMFRequester" xmi.id="EAID_F231BAA2_9827_11e0_E998_0023AEEA7726" visibility="public" namespace="EAPK_A4584A08_9827_11e0_E998_0023AEEA7726" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
@@ -2819,7 +3008,7 @@
 																<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 															</UML:ModelElement.taggedValue>
 															<UML:Classifier.feature>
-																<UML:Attribute name="remoteObject" changeable="none" visibility="private" ownerScope="instance" targetScope="instance">
+																<UML:Attribute name="consumer" changeable="none" visibility="private" ownerScope="instance" targetScope="instance">
 																	<UML:Attribute.initialValue>
 																		<UML:Expression/>
 																	</UML:Attribute.initialValue>
@@ -2894,6 +3083,90 @@
 																		</UML:Parameter>
 																	</UML:BehavioralFeature.parameter>
 																</UML:Operation>
+																<UML:Operation name="consumer" visibility="public" ownerScope="instance" isQuery="false" concurrency="sequential">
+																	<UML:ModelElement.stereotype>
+																		<UML:Stereotype name="property set"/>
+																	</UML:ModelElement.stereotype>
+																	<UML:ModelElement.taggedValue>
+																		<UML:TaggedValue tag="type" value="Void"/>
+																		<UML:TaggedValue tag="const" value="false"/>
+																		<UML:TaggedValue tag="stereotype" value="property set"/>
+																		<UML:TaggedValue tag="synchronised" value="0"/>
+																		<UML:TaggedValue tag="concurrency" value="Sequential"/>
+																		<UML:TaggedValue tag="position" value="1"/>
+																		<UML:TaggedValue tag="returnarray" value="0"/>
+																		<UML:TaggedValue tag="pure" value="0"/>
+																		<UML:TaggedValue tag="ea_guid" value="{E37F914C-990C-11e0-E998-0023AEEA7726}"/>
+																		<UML:TaggedValue tag="ea_localid" value="107"/>
+																		<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={F11D4E16-990C-11e0-E998-0023AEEA7726}$XID;$NAM=Stereotypes$NAM;$TYP=operation property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=property set;GUID={38796712-97BF-11e0-E998-0023AEEA7726};@ENDSTEREO;$DES;$CLT={E37F914C-990C-11e0-E998-0023AEEA7726}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+																	</UML:ModelElement.taggedValue>
+																	<UML:BehavioralFeature.parameter>
+																		<UML:Parameter kind="return" visibility="public">
+																			<UML:Parameter.type>
+																				<UML:Classifier xmi.idref="eaxmiid2"/>
+																			</UML:Parameter.type>
+																			<UML:ModelElement.taggedValue>
+																				<UML:TaggedValue tag="pos" value="0"/>
+																				<UML:TaggedValue tag="type" value="Void"/>
+																				<UML:TaggedValue tag="const" value="0"/>
+																				<UML:TaggedValue tag="ea_guid" value="{RETURNID-990C-11e0-E998-0023AEEA7726}"/>
+																			</UML:ModelElement.taggedValue>
+																			<UML:Parameter.defaultValue>
+																				<UML:Expression/>
+																			</UML:Parameter.defaultValue>
+																		</UML:Parameter>
+																		<UML:Parameter name="c" kind="in" visibility="public">
+																			<UML:Parameter.type>
+																				<UML:Classifier xmi.idref="EAID_85D182B4_988D_11e0_E998_0023AEEA7726"/>
+																			</UML:Parameter.type>
+																			<UML:ModelElement.taggedValue>
+																				<UML:TaggedValue tag="pos" value="0"/>
+																				<UML:TaggedValue tag="type" value="AMFConsumer"/>
+																				<UML:TaggedValue tag="const" value="0"/>
+																				<UML:TaggedValue tag="classifier" value="EAID_85D182B4_988D_11e0_E998_0023AEEA7726"/>
+																				<UML:TaggedValue tag="ea_guid" value="{EDDB2FDE-990C-11e0-E998-0023AEEA7726}"/>
+																			</UML:ModelElement.taggedValue>
+																			<UML:Parameter.defaultValue>
+																				<UML:Expression/>
+																			</UML:Parameter.defaultValue>
+																		</UML:Parameter>
+																	</UML:BehavioralFeature.parameter>
+																</UML:Operation>
+																<UML:Operation name="consumer" visibility="public" ownerScope="instance" isQuery="false" concurrency="sequential">
+																	<UML:ModelElement.stereotype>
+																		<UML:Stereotype name="property get"/>
+																	</UML:ModelElement.stereotype>
+																	<UML:ModelElement.taggedValue>
+																		<UML:TaggedValue tag="type" value="AMFConsumer"/>
+																		<UML:TaggedValue tag="const" value="false"/>
+																		<UML:TaggedValue tag="stereotype" value="property get"/>
+																		<UML:TaggedValue tag="synchronised" value="0"/>
+																		<UML:TaggedValue tag="concurrency" value="Sequential"/>
+																		<UML:TaggedValue tag="position" value="2"/>
+																		<UML:TaggedValue tag="returnarray" value="0"/>
+																		<UML:TaggedValue tag="pure" value="0"/>
+																		<UML:TaggedValue tag="ea_guid" value="{F3071EE6-990C-11e0-E998-0023AEEA7726}"/>
+																		<UML:TaggedValue tag="ea_localid" value="108"/>
+																		<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={FFB5CF5C-990C-11e0-E998-0023AEEA7726}$XID;$NAM=Stereotypes$NAM;$TYP=operation property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=property get;GUID={387A891C-97BF-11e0-E998-0023AEEA7726};@ENDSTEREO;$DES;$CLT={F3071EE6-990C-11e0-E998-0023AEEA7726}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+																	</UML:ModelElement.taggedValue>
+																	<UML:BehavioralFeature.parameter>
+																		<UML:Parameter kind="return" visibility="public">
+																			<UML:Parameter.type>
+																				<UML:Classifier xmi.idref="EAID_85D182B4_988D_11e0_E998_0023AEEA7726"/>
+																			</UML:Parameter.type>
+																			<UML:ModelElement.taggedValue>
+																				<UML:TaggedValue tag="pos" value="0"/>
+																				<UML:TaggedValue tag="type" value="AMFConsumer"/>
+																				<UML:TaggedValue tag="const" value="0"/>
+																				<UML:TaggedValue tag="classifier" value="EAID_85D182B4_988D_11e0_E998_0023AEEA7726"/>
+																				<UML:TaggedValue tag="ea_guid" value="{RETURNID-990C-11e0-E998-0023AEEA7726}"/>
+																			</UML:ModelElement.taggedValue>
+																			<UML:Parameter.defaultValue>
+																				<UML:Expression/>
+																			</UML:Parameter.defaultValue>
+																		</UML:Parameter>
+																	</UML:BehavioralFeature.parameter>
+																</UML:Operation>
 															</UML:Classifier.feature>
 														</UML:Class>
 													</UML:Namespace.ownedElement>
@@ -2935,8 +3208,9 @@
 																<UML:TaggedValue tag="tpos" value="0"/>
 																<UML:TaggedValue tag="ea_localid" value="200"/>
 																<UML:TaggedValue tag="ea_eleType" value="element"/>
-																<UML:TaggedValue tag="$ea_attsclassified" value="{0038BF40-98E3-11e0-E998-0023AEEA7726},{F02B4F28-98E2-11e0-E998-0023AEEA7726},{9991158A-98E2-11e0-E998-0023AEEA7726}"/>
-																<UML:TaggedValue tag="$ea_oprparamsclassified" value="{D6E93138-98E2-11e0-E998-0023AEEA7726},{BCBF540E-98E2-11e0-E998-0023AEEA7726}"/>
+																<UML:TaggedValue tag="$ea_attsclassified" value="{0038BF40-98E3-11e0-E998-0023AEEA7726},{F02B4F28-98E2-11e0-E998-0023AEEA7726}"/>
+																<UML:TaggedValue tag="$ea_oprsclassified" value="{5C94462C-990D-11e0-E998-0023AEEA7726},{F3071EE6-990C-11e0-E998-0023AEEA7726}"/>
+																<UML:TaggedValue tag="$ea_oprparamsclassified" value="{A0F0D7C2-990D-11e0-E998-0023AEEA7726},{EDDB2FDE-990C-11e0-E998-0023AEEA7726}"/>
 																<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 															</UML:ModelElement.taggedValue>
 														</UML:Class>
@@ -2961,8 +3235,9 @@
 																<UML:TaggedValue tag="ea_localid" value="172"/>
 																<UML:TaggedValue tag="ea_eleType" value="element"/>
 																<UML:TaggedValue tag="eventflags" value="OBJ=9c79;"/>
-																<UML:TaggedValue tag="$ea_attsclassified" value="{D3545A1C-98E1-11e0-E998-0023AEEA7726},{7339C8A6-98E1-11e0-E998-0023AEEA7726},{3302C5E6-983A-11e0-E998-0023AEEA7726}"/>
-																<UML:TaggedValue tag="$ea_oprparamsclassified" value="{B8CBC93C-98E1-11e0-E998-0023AEEA7726},{ACC8BA78-98E1-11e0-E998-0023AEEA7726}"/>
+																<UML:TaggedValue tag="$ea_attsclassified" value="{D3545A1C-98E1-11e0-E998-0023AEEA7726},{3302C5E6-983A-11e0-E998-0023AEEA7726}"/>
+																<UML:TaggedValue tag="$ea_oprsclassified" value="{9745EAF6-990C-11e0-E998-0023AEEA7726},{6EF4FFCE-990C-11e0-E998-0023AEEA7726}"/>
+																<UML:TaggedValue tag="$ea_oprparamsclassified" value="{954F5E80-990C-11e0-E998-0023AEEA7726}"/>
 																<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 															</UML:ModelElement.taggedValue>
 															<UML:Classifier.feature>
@@ -2971,7 +3246,7 @@
 																		<UML:Expression/>
 																	</UML:Attribute.initialValue>
 																	<UML:StructuralFeature.type>
-																		<UML:Classifier xmi.idref="eaxmiid3"/>
+																		<UML:Classifier xmi.idref="eaxmiid5"/>
 																	</UML:StructuralFeature.type>
 																	<UML:ModelElement.taggedValue>
 																		<UML:TaggedValue tag="type" value="HTTPService"/>
@@ -2994,7 +3269,7 @@
 																		<UML:Expression body="&quot;HTTP Consumer Fault! &quot;"/>
 																	</UML:Attribute.initialValue>
 																	<UML:StructuralFeature.type>
-																		<UML:Classifier xmi.idref="eaxmiid4"/>
+																		<UML:Classifier xmi.idref="eaxmiid3"/>
 																	</UML:StructuralFeature.type>
 																	<UML:ModelElement.taggedValue>
 																		<UML:TaggedValue tag="type" value="String"/>
@@ -3028,7 +3303,7 @@
 																	<UML:BehavioralFeature.parameter>
 																		<UML:Parameter kind="return" visibility="public">
 																			<UML:Parameter.type>
-																				<UML:Classifier xmi.idref="eaxmiid5"/>
+																				<UML:Classifier xmi.idref="eaxmiid6"/>
 																			</UML:Parameter.type>
 																			<UML:ModelElement.taggedValue>
 																				<UML:TaggedValue tag="pos" value="0"/>
@@ -3042,7 +3317,7 @@
 																		</UML:Parameter>
 																		<UML:Parameter name="url" kind="in" visibility="public">
 																			<UML:Parameter.type>
-																				<UML:Classifier xmi.idref="eaxmiid4"/>
+																				<UML:Classifier xmi.idref="eaxmiid3"/>
 																			</UML:Parameter.type>
 																			<UML:ModelElement.taggedValue>
 																				<UML:TaggedValue tag="pos" value="0"/>
@@ -3085,7 +3360,7 @@
 																		</UML:Parameter>
 																		<UML:Parameter name="event" kind="in" visibility="public">
 																			<UML:Parameter.type>
-																				<UML:Classifier xmi.idref="eaxmiid6"/>
+																				<UML:Classifier xmi.idref="eaxmiid7"/>
 																			</UML:Parameter.type>
 																			<UML:ModelElement.taggedValue>
 																				<UML:TaggedValue tag="pos" value="0"/>
@@ -3118,7 +3393,7 @@
 																	<UML:BehavioralFeature.parameter>
 																		<UML:Parameter kind="return" visibility="public">
 																			<UML:Parameter.type>
-																				<UML:Classifier xmi.idref="eaxmiid3"/>
+																				<UML:Classifier xmi.idref="eaxmiid5"/>
 																			</UML:Parameter.type>
 																			<UML:ModelElement.taggedValue>
 																				<UML:TaggedValue tag="pos" value="0"/>
@@ -3165,7 +3440,7 @@
 																		</UML:Parameter>
 																		<UML:Parameter name="value" kind="in" visibility="public">
 																			<UML:Parameter.type>
-																				<UML:Classifier xmi.idref="eaxmiid3"/>
+																				<UML:Classifier xmi.idref="eaxmiid5"/>
 																			</UML:Parameter.type>
 																			<UML:ModelElement.taggedValue>
 																				<UML:TaggedValue tag="pos" value="0"/>
@@ -3276,13 +3551,14 @@
 						</UML:Package>
 					</UML:Namespace.ownedElement>
 				</UML:Package>
-				<UML:DataType xmi.id="eaxmiid6" name="FaultEvent" visibility="private" isRoot="false" isLeaf="false" isAbstract="false"/>
+				<UML:DataType xmi.id="eaxmiid7" name="FaultEvent" visibility="private" isRoot="false" isLeaf="false" isAbstract="false"/>
+				<UML:DataType xmi.id="eaxmiid4" name="Number" visibility="private" isRoot="false" isLeaf="false" isAbstract="false"/>
 				<UML:DataType xmi.id="eaxmiid0" name="void" visibility="private" isRoot="false" isLeaf="false" isAbstract="false"/>
 				<UML:DataType xmi.id="eaxmiid2" name="Void" visibility="private" isRoot="false" isLeaf="false" isAbstract="false"/>
 				<UML:DataType xmi.id="eaxmiid1" name="ResultEvent" visibility="private" isRoot="false" isLeaf="false" isAbstract="false"/>
-				<UML:DataType xmi.id="eaxmiid4" name="String" visibility="private" isRoot="false" isLeaf="false" isAbstract="false"/>
-				<UML:DataType xmi.id="eaxmiid3" name="HTTPService" visibility="private" isRoot="false" isLeaf="false" isAbstract="false"/>
-				<UML:DataType xmi.id="eaxmiid5" name="var" visibility="private" isRoot="false" isLeaf="false" isAbstract="false"/>
+				<UML:DataType xmi.id="eaxmiid3" name="String" visibility="private" isRoot="false" isLeaf="false" isAbstract="false"/>
+				<UML:DataType xmi.id="eaxmiid5" name="HTTPService" visibility="private" isRoot="false" isLeaf="false" isAbstract="false"/>
+				<UML:DataType xmi.id="eaxmiid6" name="var" visibility="private" isRoot="false" isLeaf="false" isAbstract="false"/>
 			</UML:Namespace.ownedElement>
 		</UML:Model>
 		<UML:Diagram name="Design Model" xmi.id="EAID_FAA22500_981D_11e0_E998_0023AEEA7726" diagramType="ClassDiagram" owner="EAPK_FAA1A7BA_981D_11e0_E998_0023AEEA7726" toolName="Enterprise Architect 2.5">
@@ -3335,7 +3611,7 @@
 				<UML:TaggedValue tag="version" value="1.0"/>
 				<UML:TaggedValue tag="author" value="Fábio Fávero Henkes"/>
 				<UML:TaggedValue tag="created_date" value="2011-06-16 13:38:13"/>
-				<UML:TaggedValue tag="modified_date" value="2011-06-16 22:22:15"/>
+				<UML:TaggedValue tag="modified_date" value="2011-06-17 14:09:48"/>
 				<UML:TaggedValue tag="package" value="EAPK_FAA1FD6E_981D_11e0_E998_0023AEEA7726"/>
 				<UML:TaggedValue tag="type" value="Package"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;SW1=233;SW2=261;SW3=260;"/>
@@ -3347,7 +3623,7 @@
 			<UML:Diagram.element>
 				<UML:DiagramElement geometry="Left=307;Top=144;Right=441;Bottom=224;" subject="EAID_65D7A052_9837_11e0_E998_0023AEEA7726" seqno="1" style="DUID=6B81FE94;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
 				<UML:DiagramElement geometry="Left=45;Top=82;Right=175;Bottom=287;" subject="EAID_579D7DE0_9837_11e0_E998_0023AEEA7726" seqno="2" style="DUID=5DED4676;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=566;Top=144;Right=696;Bottom=224;" subject="EAID_E8C97F54_9836_11e0_E998_0023AEEA7726" seqno="3" style="DUID=31C7DD04;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=566;Top=138;Right=696;Bottom=231;" subject="EAID_E8C97F54_9836_11e0_E998_0023AEEA7726" seqno="3" style="DUID=31C7DD04;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
 				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_79389AFC_9837_11e0_E998_0023AEEA7726" style="Mode=3;EOID=31C7DD04;SOID=6B81FE94;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_75B3DDCE_9837_11e0_E998_0023AEEA7726" style="Mode=3;EOID=6B81FE94;SOID=5DED4676;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="width=233;" subject="EAID_0F568E78_9837_11e0_E998_0023AEEA7726" style="swimlane;name=View;class=;partition=1;description=OE0={579D7DE0-9837-11e0-E998-0023AEEA7726}:;"/>
@@ -3443,7 +3719,7 @@
 				<UML:TaggedValue tag="version" value="1.0"/>
 				<UML:TaggedValue tag="author" value="Fábio Fávero Henkes"/>
 				<UML:TaggedValue tag="created_date" value="2005-11-20 00:00:00"/>
-				<UML:TaggedValue tag="modified_date" value="2011-06-17 10:09:47"/>
+				<UML:TaggedValue tag="modified_date" value="2011-06-17 15:14:45"/>
 				<UML:TaggedValue tag="package" value="EAPK_E8C97F54_9836_11e0_E998_0023AEEA7726"/>
 				<UML:TaggedValue tag="type" value="Logical"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
@@ -3453,16 +3729,16 @@
 				<UML:TaggedValue tag="styleex" value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
-				<UML:DiagramElement geometry="Left=619;Top=467;Right=771;Bottom=537;" subject="EAID_85D182B4_988D_11e0_E998_0023AEEA7726" seqno="1" style="DUID=79062C4C;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=609;Top=467;Right=761;Bottom=537;" subject="EAID_85D182B4_988D_11e0_E998_0023AEEA7726" seqno="1" style="DUID=79062C4C;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
 				<UML:DiagramElement geometry="Left=84;Top=436;Right=422;Bottom=588;" subject="EAID_B429A716_9835_11e0_E998_0023AEEA7726" seqno="2" style="DUID=19FD3528;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=563;Top=323;Right=828;Bottom=407;" subject="EAID_B4B2B046_9827_11e0_E998_0023AEEA7726" seqno="3" style="DUID=FEC74640;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=603;Top=15;Right=757;Bottom=105;" subject="EAID_33CFFFC8_981E_11e0_E998_0023AEEA7726" seqno="4" style="DUID=F0629D7A;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=712;Top=190;Right=874;Bottom=260;" subject="EAID_E81FF966_9827_11e0_E998_0023AEEA7726" seqno="5" style="DUID=D6149536;"/>
-				<UML:DiagramElement geometry="Left=508;Top=190;Right=670;Bottom=260;" subject="EAID_F231BAA2_9827_11e0_E998_0023AEEA7726" seqno="6" style="DUID=CB7DEF0A;"/>
-				<UML:DiagramElement geometry="Left=70;Top=323;Right=436;Bottom=407;" subject="EAID_BE017CD6_9827_11e0_E998_0023AEEA7726" seqno="7" style="DUID=C1F48D32;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=259;Top=180;Right=450;Bottom=264;" subject="EAID_DF27E774_9827_11e0_E998_0023AEEA7726" seqno="8" style="DUID=9E4F6528;"/>
-				<UML:DiagramElement geometry="Left=13;Top=180;Right=204;Bottom=264;" subject="EAID_D5D1AE44_9827_11e0_E998_0023AEEA7726" seqno="9" style="DUID=8A775A88;"/>
-				<UML:DiagramElement geometry="Left=161;Top=5;Right=287;Bottom=95;" subject="EAID_2440CA06_981E_11e0_E998_0023AEEA7726" seqno="10" style="DUID=7512D816;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=543;Top=340;Right=829;Bottom=411;" subject="EAID_B4B2B046_9827_11e0_E998_0023AEEA7726" seqno="3" style="DUID=FEC74640;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=603;Top=15;Right=757;Bottom=85;" subject="EAID_33CFFFC8_981E_11e0_E998_0023AEEA7726" seqno="4" style="DUID=F0629D7A;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=712;Top=167;Right=885;Bottom=295;" subject="EAID_E81FF966_9827_11e0_E998_0023AEEA7726" seqno="5" style="DUID=D6149536;"/>
+				<UML:DiagramElement geometry="Left=503;Top=167;Right=676;Bottom=295;" subject="EAID_F231BAA2_9827_11e0_E998_0023AEEA7726" seqno="6" style="DUID=CB7DEF0A;"/>
+				<UML:DiagramElement geometry="Left=68;Top=338;Right=434;Bottom=409;" subject="EAID_BE017CD6_9827_11e0_E998_0023AEEA7726" seqno="7" style="DUID=C1F48D32;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=261;Top=161;Right=472;Bottom=301;" subject="EAID_DF27E774_9827_11e0_E998_0023AEEA7726" seqno="8" style="DUID=9E4F6528;"/>
+				<UML:DiagramElement geometry="Left=9;Top=161;Right=220;Bottom=301;" subject="EAID_D5D1AE44_9827_11e0_E998_0023AEEA7726" seqno="9" style="DUID=8A775A88;"/>
+				<UML:DiagramElement geometry="Left=175;Top=12;Right=309;Bottom=82;" subject="EAID_2440CA06_981E_11e0_E998_0023AEEA7726" seqno="10" style="DUID=7512D816;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
 				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_72235F48_9893_11e0_E998_0023AEEA7726" style="Mode=3;EOID=C1F48D32;SOID=19FD3528;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_071C22E8_982A_11e0_E998_0023AEEA7726" style="Mode=3;EOID=D6149536;SOID=FEC74640;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_0987157E_982A_11e0_E998_0023AEEA7726" style="Mode=3;EOID=CB7DEF0A;SOID=FEC74640;Color=-1;LWidth=0;Hidden=0;"/>
