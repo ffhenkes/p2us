@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:TitleWindow xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" 
+		 width="400" height="300"
+		 close="PopUpManager.removePopUp(this)"
+		 title="{infoData}">
+	<fx:Script>
+		<![CDATA[
+			import mx.managers.PopUpManager;
+			
+			import us.party2.model.pojo.LfmPojo;
+			
+			private var _infoData:LfmPojo;
+			
+			public function set infoData(pojo:LfmPojo):void {
+				_infoData = pojo;
+			}
+			
+			[Bindable]
+			public function get infoData():LfmPojo {
+				return _infoData;
+			}
+			
+			/*
+			public var title:String;
+			public var lat:Number;
+			public var long:Number;
+			public var venue:Object;
+			public var artists:Object;
+			public var url:String; 
+			public var description:String;
+			public var image:ArrayCollection;
+			public var startDate:String;
+			public var reviews:String;
+			public var tag:String;
+			public var website:String;
+			public var tickets:ArrayCollection;
+			public var cancelled:Number;
+			public var tags:ArrayCollection;
+			*/
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:Group width="100%" height="100%">
+	</s:Group>
+	
+</s:TitleWindow>

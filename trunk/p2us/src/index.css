@@ -1,0 +1,87 @@
+/* CSS file */
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace mx "library://ns.adobe.com/flex/mx";
+
+
+global
+{
+	fontFamily: comicsans;
+}
+
+@font-face
+{
+	fontFamily: comicsans;
+	/*src: url("C:\comicsans.ttf");*/
+	src: url("/us/party2/view/assets/comicsans.ttf");
+	embedAsCFF: true;
+}
+
+mx|Alert {
+	fontFamily: Arial;
+}
+
+mx|Label {
+	font-family: Arial;
+}
+
+mx|TabNavigator {
+	fontFamily: Arial;
+	font-size: 14px;
+	selected-tab-text-style-name: tabStyle;
+}
+
+.tabStyle {
+	fontFamily: Arial;
+	font-size: 16px;
+	font-weight:bold;
+}
+
+s|TextInput {
+	fontFamily: comicsans;
+	font-size: 16px;
+	font-weight:normal;
+} 
+
+mx|LinkButton
+{
+	font-family: Arial;
+	/*color: #336699;*/
+	roll-over-color: #EFEEF0;
+	text-roll-over-color: #FF3300;
+}
+
+.text-roll-over-decoration 
+{
+	font-family: Arial;
+	text-decoration:underline;	
+	/*font-size:14px;*/
+}
+
+.text-selected
+{
+	font-family: Arial;
+	text-decoration:underline;	
+	font-size:14px;
+}
+
+.mainLabel {
+	fontFamily: comicsans;
+	font-size: 72px;
+}
+
+.alphaMainLabel {
+	fontFamily: comicsans;
+	font-size: 12px;
+}
+
+.resultLabel {
+	fontFamily: comicsans;
+	font-size: 48px;	
+}
+
+.smallTab {
+	font-family: Arial;
+	font-size: 12px;
+}
+
+	

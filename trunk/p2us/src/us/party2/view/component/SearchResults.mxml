@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx"
+		 xmlns:component="us.party2.view.component.*"
+		 width="100%" height="100%"
+		 creationComplete="init()"
+		>
+	
+	<fx:Script>
+		<![CDATA[
+			import com.demonsters.debugger.MonsterDebugger;
+			
+			import mx.collections.ArrayCollection;
+			
+			import us.party2.controller.MainSearchCityController;
+			
+			private var control:MainSearchCityController;
+			
+			[Bindable]
+			private var info:String;
+			
+			private var _eResult:ArrayCollection;
+			
+			public function init():void {
+				control = MainSearchCityController.getInstance();
+				control.searchResults = this;
+				control.map.service.setSize(new Point(mapGroup.width, mapGroup.height));
+				info = control.titleInfo.toUpperCase();
+				mapGroup.removeAllElements();
+				mapGroup.addElement(control.map.service);
+			}
+			
+			public function set eResult(r:ArrayCollection):void {
+				_eResult = r;
+			}
+			
+			[Bindable]
+			public function get eResult():ArrayCollection {
+				return _eResult;
+			}
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:layout>
+		<s:VerticalLayout verticalAlign="middle" horizontalAlign="center" />
+	</s:layout>	
+		<s:Group id="topGroup" width="100%" height="100">
+			<s:Label x="10" y="9" text="party2" styleName="resultLabel" />
+			<s:Label x="181" y="9" text="us" styleName="resultLabel" />
+			<s:BitmapImage source="@Embed('/us/party2/view/assets/party2icon_small.png')"  x="160" y="26"/>
+			<s:Label x="229" y="36" text="alpha" />
+			<s:BitmapImage x="13" y="64" source="@Embed('/us/party2/view/assets/lastfm.png')" />
+			<component:EventList id="eList" eventData="{eResult}" top="10" x="300"/>
+			<component:SmallSearch top="8" right="20" id="smallSearch" />
+		</s:Group>
+		<s:TitleWindow skinClass="us.party2.view.skin.PartyPanelSkin" width="100%" height="100%" title="Search Results - {info}" >
+			<s:Group id="mapGroup" width="100%" height="100%"  />
+		</s:TitleWindow>
+</s:Group>
