@@ -42,35 +42,7 @@ package us.party2.model.requester
 			totalRecords = event.result.lfm.events.total;
 			
 			for each (var o:Object in event.result.lfm.events.event as ArrayCollection) {
-				/*
-				var p:LfmPojo = new LfmPojo();
-				p.title = o.title;
-				p.startDate = o.startDate;
-				p.lat = o.venue.location.point.lat;
-				p.long = o.venue.location.point.long;
-				dataProvider.addItem(p);
-				*/
 				
-				/*
-				public var title:String;
-				public var lat:Number;
-				public var long:Number;
-				public var venue:Object;
-				public var artists:Object;
-				public var url:String; 
-				public var description:String;
-				public var smallImg:String;
-				public var mediumImg:String;
-				public var largeImg:String;
-				public var extraLargeImage:String;
-				public var startDate:String;
-				public var reviews:String;
-				public var tag:String;
-				public var website:String;
-				public var tickets:ArrayCollection;
-				public var cancelled:Number;
-				public var tags:ArrayCollection;
-				*/
 				var p:us.party2.model.pojo.LfmPojo = new us.party2.model.pojo.LfmPojo();
 				p.title = o.title;
 				p.lat = o.venue.location.point.lat;
