@@ -157,6 +157,7 @@ package us.party2.controller
 			PopUpManager.addPopUp(rtw, this.searchResults, false);
 			PopUpManager.centerPopUp(rtw);
 			map.service.setCenter(new LatLng(e.currentTarget.data.lat,e.currentTarget.data.long), 13);
+			map.service.setZoom(100, true);
 		}
 		
 		private function treatDetail(pojo:LfmPojo):String {
