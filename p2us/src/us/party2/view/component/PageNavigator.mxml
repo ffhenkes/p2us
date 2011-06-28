@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" 
+		 width="100%" height="44"
+		 >
+	<s:layout>
+		<s:HorizontalLayout verticalAlign="middle" horizontalAlign="center"/>
+	</s:layout>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import mx.collections.ArrayCollection;
+			import mx.controls.Alert;
+			import mx.controls.Label;
+			import mx.controls.LinkButton;
+			
+			private var _referWindow:Object;
+			
+			private var _baseLimit:Number;
+			private var _recPerPage:Number; 
+			private var _totRec:Number = 0; //vira do servico
+			
+			private var numPages:Number = 0;
+			private var iteration:Number;
+			private var limit:Number; 
+			private var bigI:Number;
+			
+			[Bindable]
+			private var currentPage:String = "1";
+			private var link:LinkButton;
+			
+			private var pojoCollection:Array = new Array();
+			private var pojo:Object;
+			
+			private var prevTarget:Object = new Object();
+			
+			private var label:Label;
+			
+			public function init():void {
+				removeAllElements();
+				iteration = 0;
+				bigI = 1;
+				limit = baseLimit; 
+				numPages = Math.ceil(totRec / recPerPage);
+				
+				pojo = new Object();
+				pojo.limit = baseLimit;
+				pojo.bigI = bigI;
+				pojoCollection[1] = pojo;
+				
+				for (var contador:int=bigI+1; contador<=Math.ceil(numPages/baseLimit); contador++) {
+					pojo = new Object();
+					pojo.bigI = limit + 1;
+					var raz:Number = numPages - limit;
+					pojo.limit = limit = limit + (raz > baseLimit ? baseLimit : raz);
+					pojoCollection[contador] = pojo;
+				}
+				
+				limit = baseLimit;
+				create(numPages, bigI, limit, true);
+			}
+
+			private function create(nPags:Number, cont:Number, size:Number, direction:Boolean, last:Boolean=false):void {
+				var i:Number = 0;
+				var x:Number = 0;
+				
+				if (!last)
+					direction ? iteration++ : iteration--;
+				
+				if (iteration > 1) { 
+					
+					if  (iteration > 2) {
+						link = new LinkButton();
+						link.y = 5;
+						link.x = 340;
+						link.label = "First";
+						link.addEventListener(MouseEvent.CLICK, firstPagesHandler);
+						addElement(link);
+					}
+					
+					link = new LinkButton();
+					link.y = 5;
+					link.x = 370;
+					link.label = "...";
+					link.addEventListener(MouseEvent.CLICK, prevPagesHandler);
+					addElement(link);
+				}
+				
+				if (numPages >= size) {
+					for (i=cont; i<=size; i++) {
+						link = new LinkButton();
+						link.y = 5;
+						link.x = 400+x;
+						link.label = ""+i;
+						x+=30;
+						link.addEventListener(MouseEvent.CLICK, currentPageHandler);
+						addElement(link);
+					}
+				} else {
+					for (i=cont; i<=nPags; i++) {
+						link = new LinkButton();
+						link.y = 5;
+						link.x = 400+x;
+						link.label = ""+i;
+						x+=30;
+						link.addEventListener(MouseEvent.CLICK, currentPageHandler);
+						addElement(link);
+					}
+				}
+				
+				if (nPags > limit) {
+					link = new LinkButton();
+					link.y = 5;
+					link.x = 400+x;
+					link.label = "...";
+					link.addEventListener(MouseEvent.CLICK, nextPagesHandler);
+					addElement(link);
+					x+=30;
+					link = new LinkButton();
+					link.y = 5;
+					link.x = 400+x;
+					link.label = "Last";
+					link.addEventListener(MouseEvent.CLICK, lastPageHandler);
+					addElement(link);
+				}
+				
+				label = new Label();
+				label.y = 5;
+				label.x = 800+x;
+				label.text = getLabelString();
+				addElement(label);
+			}
+
+			private function firstPagesHandler(event:MouseEvent):void {
+				removeAllElements();
+				pojo = pojoCollection[1] as Object;
+				limit = pojo.limit;
+				bigI = pojo.bigI;
+				iteration = 0;
+				create(numPages, pojo.bigI, pojo.limit, true);
+				referWindow.navigate(bigI);
+			}
+
+			private function currentPageHandler(event:MouseEvent):void {
+				currentPage = event.currentTarget.label;
+				label.text = getLabelString();;
+				prevTarget.styleName = "";
+				event.currentTarget.styleName = "text-selected";
+				prevTarget = event.currentTarget; 
+				referWindow.navigate(event.currentTarget.label);
+				
+			}
+			
+			private function prevPagesHandler(event:MouseEvent):void {
+				removeAllElements();
+				pojo = pojoCollection[iteration - 1] as Object;
+				limit = pojo.limit;
+				bigI = pojo.bigI;
+				currentPage = limit.toString();
+				label.text = getLabelString();;
+				create(numPages, pojo.bigI, pojo.limit, false);
+				referWindow.navigate(limit.toString());
+			}
+			
+			private function nextPagesHandler(event:MouseEvent):void {
+				removeAllElements();
+				bigI = limit + 1;
+				var raz:Number = numPages - limit;
+				limit = limit + (raz > baseLimit ? baseLimit : raz);
+				currentPage = bigI.toString();
+				label.text = getLabelString();;
+				create(numPages, bigI, limit, true);
+				referWindow.navigate(bigI.toString());
+			}
+			
+			private function lastPageHandler(event:MouseEvent):void
+			{
+				removeAllElements();
+				iteration = Math.ceil(numPages/baseLimit);
+				pojo = pojoCollection[iteration];
+				bigI = pojo.bigI;
+				limit = pojo.limit;
+				currentPage = numPages.toString();
+				label.text = getLabelString();;
+				create(numPages, pojo.bigI, pojo.limit, true, true);
+				referWindow.navigate(numPages.toString());
+			}
+
+			public function get recPerPage():Number
+			{
+				return _recPerPage;
+			}
+
+			public function set recPerPage(value:Number):void
+			{
+				_recPerPage = value;
+			}
+
+			public function get totRec():Number
+			{
+				return _totRec;
+			}
+
+			public function set totRec(value:Number):void
+			{
+				_totRec = value;
+			}
+
+			public function get baseLimit():Number
+			{
+				return _baseLimit;
+			}
+
+			public function set baseLimit(value:Number):void
+			{
+				_baseLimit = value;
+			}
+			
+			public function get referWindow():Object
+			{
+				return _referWindow;
+			}
+
+			public function set referWindow(value:Object):void
+			{
+				_referWindow = value;
+			}
+			
+			public function getLabelString():String {
+				return "  Page "+currentPage+" of "+numPages+".  "+totRec+" records found.";
+			}
+
+		]]>
+	</fx:Script>
+</s:Group>

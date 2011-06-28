@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx"
+		 xmlns:component="us.party2.view.component.*"
+		 width="30%" height="90" 
+		 creationComplete="init()">
+	
+	<fx:Script>
+		<![CDATA[
+			import com.google.maps.LatLng;
+			import com.google.maps.overlays.MarkerOptions;
+			
+			import mx.collections.ArrayCollection;
+			import mx.controls.Alert;
+			
+			import us.party2.controller.MainSearchCityController;
+			import us.party2.model.pojo.LfmPojo;
+			
+			private var _eventData:ArrayCollection = new ArrayCollection();
+			private var control:MainSearchCityController;
+			
+			[Embed(source="/us/party2/view/assets/party2icon_small.png")] 
+			private var purpleIcon:Class;
+			
+			private function init():void {
+				control = MainSearchCityController.getInstance();
+				pagNav.totRec = control.totalRecords;
+				pagNav.init();
+			}
+			
+			public function set eventData(ed:ArrayCollection):void {
+				_eventData = ed;
+			}
+			
+			[Bindable]
+			public function get eventData():ArrayCollection {
+				return _eventData;
+			}
+			
+			public function navigate(par:String):void {
+				control.searchCity(0, parseInt(par));
+			}
+			
+			private function onDoubleClick():void {
+				var pojo:LfmPojo = listEvent.selectedItem as LfmPojo;
+				control.map.service.setCenter(new LatLng(pojo.lat,pojo.long), 13);
+				control.map.service.setZoom(100, true);
+			}
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<s:layout>
+		<s:VerticalLayout horizontalAlign="center" verticalAlign="middle" />
+	</s:layout>
+	<s:List id="listEvent" dataProvider="{eventData}" width="100%" height="70" doubleClickEnabled="true" doubleClick="onDoubleClick()"/>
+	<component:PageNavigator id="pagNav" width="100%" height="20" recPerPage="10" baseLimit="3" referWindow="{this}"/>			
+</s:Group>
