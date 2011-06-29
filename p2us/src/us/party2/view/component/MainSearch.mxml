@@ -11,16 +11,12 @@
 		<![CDATA[
 			
 			import us.party2.controller.MainSearchCityController;
-			import us.party2.controller.SearchPartyController;
 			
 			private var control:MainSearchCityController;
-			private var pcontrol:SearchPartyController; 
 			
 			private function init():void {
 				control = MainSearchCityController.getInstance();
-				pcontrol = SearchPartyController.getInstance();
 				control.mainSearch = this;
-				pcontrol.mainSearch = this;
 			}
 			
 			public function set txtParty(value:TextInput):void {
@@ -42,7 +38,7 @@
 	</fx:Script>
 	<mx:TabNavigator width="100%" height="100%" dropShadowVisible="true" borderVisible="false" id="mainTab">
 		<s:NavigatorContent label="Party" width="100%" height="100%">
-			<s:TextInput x="10" y="10" height="43" width="780" id="_txtParty" enter="pcontrol.searchParty(1)"/>
+			<s:TextInput x="10" y="10" height="43" width="780" id="_txtParty" />
 		</s:NavigatorContent>
 		<s:NavigatorContent label="City" width="100%" height="100%">
 			<s:TextInput x="10" y="10" height="43" width="780" id="_txtCity" enter="control.searchCity(1)"/>
