@@ -14,17 +14,17 @@
 			import mx.collections.ArrayCollection;
 			import mx.controls.Alert;
 			
-			import us.party2.controller.MainSearchCityController;
+			import us.party2.controller.MainSearchController;
 			import us.party2.model.pojo.LfmPojo;
 			
 			private var _eventData:ArrayCollection = new ArrayCollection();
-			private var control:MainSearchCityController;
+			private var control:MainSearchController;
 			
 			[Embed(source="/us/party2/view/assets/party2icon_small.png")] 
 			private var purpleIcon:Class;
 			
 			private function init():void {
-				control = MainSearchCityController.getInstance();
+				control = MainSearchController.getInstance();
 				pagNav.totRec = control.totalRecords;
 				pagNav.init();
 			}
