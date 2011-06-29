@@ -85,7 +85,7 @@ package us.party2.controller
 			
 		}
 		
-		public function searchParty(call:int, page:Number):void {
+		public function searchParty(call:int, page:Number=1):void {
 			titleInfo = call == 1 ? mainSearch.txtParty.text : searchResults.smallSearch.txtParty.text;
 			map = new MapConsumer();
 			
