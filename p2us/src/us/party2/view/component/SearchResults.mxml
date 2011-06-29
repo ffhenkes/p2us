@@ -13,9 +13,9 @@
 			
 			import mx.collections.ArrayCollection;
 			
-			import us.party2.controller.MainSearchCityController;
+			import us.party2.controller.MainSearchController;
 			
-			private var control:MainSearchCityController;
+			private var control:MainSearchController;
 			
 			[Bindable]
 			private var info:String;
@@ -23,7 +23,7 @@
 			private var _eResult:ArrayCollection;
 			
 			public function init():void {
-				control = MainSearchCityController.getInstance();
+				control = MainSearchController.getInstance();
 				control.searchResults = this;
 				control.map.service.setSize(new Point(mapGroup.width, mapGroup.height));
 				info = control.titleInfo.toUpperCase();

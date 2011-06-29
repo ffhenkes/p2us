@@ -10,12 +10,12 @@
 		<![CDATA[
 			import com.google.maps.Map;
 			
-			import us.party2.controller.MainSearchCityController;
+			import us.party2.controller.MainSearchController;
 			
-			private var control:MainSearchCityController;
+			private var control:MainSearchController;
 			
 			private function init():void {
-				control = MainSearchCityController.getInstance();
+				control = MainSearchController.getInstance();
 				control.mainView = this;
 			}
 			
