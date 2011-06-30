@@ -5,6 +5,7 @@ package us.party2.model.requester
 	import mx.collections.ArrayCollection;
 	import mx.rpc.events.ResultEvent;
 	
+	import us.party2.controller.MainSearchController;
 	import us.party2.model.adapter.IRESTRequesterAdapter;
 	import us.party2.model.consumer.http.HTTPServiceConsumer;
 	import us.party2.model.pojo.LfmPojo;
@@ -19,9 +20,11 @@ package us.party2.model.requester
 		private var perPage:Number;
 		private var totalRecords:Number;
 		private var dataProvider:ArrayCollection = new ArrayCollection();
+		private var control:MainSearchController;
 		
 		public function LfmPartyRequester()
 		{
+			control = MainSearchController.getInstance();
 		}
 		
 		public function request():void
@@ -57,8 +60,8 @@ package us.party2.model.requester
 				dataProvider.addItem(p);
 			}
 			
-			//control.totalRecords = totalRecords;
-			//control.lfmRequestResult(dataProvider);
+			control.totalRecords = totalRecords;
+			control.lfmRequestResult(dataProvider);
 			
 		}
 		

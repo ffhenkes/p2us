@@ -18,6 +18,8 @@
 			import us.party2.model.pojo.LfmPojo;
 			
 			private var _eventData:ArrayCollection = new ArrayCollection();
+			
+			[Bindable]
 			private var control:MainSearchController;
 			
 			[Embed(source="/us/party2/view/assets/party2icon_small.png")] 
@@ -38,6 +40,7 @@
 				return _eventData;
 			}
 			
+			/*
 			public function navigate(par:String):void {
 				control.searchCity(0, parseInt(par));
 			}
@@ -47,6 +50,7 @@
 				control.map.service.setCenter(new LatLng(pojo.lat,pojo.long), 13);
 				control.map.service.setZoom(100, true);
 			}
+			*/
 		]]>
 	</fx:Script>
 	
@@ -57,6 +61,6 @@
 	<s:layout>
 		<s:VerticalLayout horizontalAlign="center" verticalAlign="middle" />
 	</s:layout>
-	<s:List id="listEvent" dataProvider="{eventData}" width="100%" height="70" doubleClickEnabled="true" doubleClick="onDoubleClick()"/>
-	<component:PageNavigator id="pagNav" width="100%" height="20" recPerPage="10" baseLimit="3" referWindow="{this}"/>			
+	<s:List id="listEvent" dataProvider="{eventData}" width="100%" height="70" doubleClickEnabled="true" doubleClick="control.onDoubleClick()"/>
+	<component:PageNavigator id="pagNav" width="100%" height="20" recPerPage="10" baseLimit="3" referWindow="{control}"/>			
 </s:Group>
