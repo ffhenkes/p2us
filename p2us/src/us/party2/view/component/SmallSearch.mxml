@@ -21,7 +21,7 @@
 	</fx:Script>
 	<mx:TabNavigator width="100%" height="84" borderVisible="false" dropShadowVisible="true" id="smallTab">
 		<s:NavigatorContent label="Party" width="100%" height="100%">
-			<s:TextInput x="10" y="16" height="28" width="378" id="txtParty" enter="control.searchParty(0)"/>
+			<s:TextInput x="10" y="16" height="28" width="378" id="txtParty" enter="control.searchParty(3)"/>
 		</s:NavigatorContent>
 		<s:NavigatorContent label="City" width="100%" height="100%">
 			<s:TextInput x="10" y="16" height="28" width="378" id="txtCity" enter="control.searchCity(0)"/>

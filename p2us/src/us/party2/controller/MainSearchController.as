@@ -59,7 +59,7 @@ package us.party2.controller
 		
 		private var _titleInfo:String;
 		
-		
+		private var caller:Number;
 		
 		public var count:Number = 0;
 		
@@ -77,7 +77,14 @@ package us.party2.controller
 		}
 		
 		public function searchCity(call:int, page:Number=1):void  {
-			titleInfo = call == 1 ? mainSearch.txtCity.text : searchResults.smallSearch.txtCity.text;
+			caller = call;
+			
+			if (call == 1) {
+				titleInfo = mainSearch.txtCity.text;
+			} else if (call == 0) {
+				titleInfo = searchResults.smallSearch.txtCity.text;
+			}
+			//titleInfo = call == 1 ? mainSearch.txtCity.text : searchResults.smallSearch.txtCity.text;
 			map = new MapConsumer();
 			
 			var requester:IRESTRequesterAdapter = RESTRequesterFactory.createLfmCityRequester(titleInfo, page);
@@ -86,7 +93,14 @@ package us.party2.controller
 		}
 		
 		public function searchParty(call:int, page:Number=1):void {
-			titleInfo = call == 1 ? mainSearch.txtParty.text : searchResults.smallSearch.txtParty.text;
+			caller = call;
+			
+			if (call == 2) {
+				titleInfo = mainSearch.txtParty.text;
+			} else if (call == 3) {
+				titleInfo = searchResults.smallSearch.txtParty.text;
+			}
+			//titleInfo = call == 2 ? mainSearch.txtParty.text : searchResults.smallSearch.txtParty.text;
 			map = new MapConsumer();
 			
 			var requester:IRESTRequesterAdapter = RESTRequesterFactory.createLfmPartyRequester(titleInfo, page);
@@ -100,6 +114,12 @@ package us.party2.controller
 		}
 		
 		public function onMapReady(event:MapEvent):void {
+			
+			if (caller == 1) {
+				searchResults.smallSearch.txtCity.text = titleInfo;
+			}  else if (caller == 2) {
+				searchResults.smallSearch.txtParty.text = titleInfo;
+			}
 			
 			map.service.addControl(new ZoomControl());
 			map.service.addControl(new PositionControl());
@@ -187,6 +207,22 @@ package us.party2.controller
 		{
 			event.target.removeEventListener("close", closeHandler);
 			PopUpManager.removePopUp(event.target as IFlexDisplayObject);
+		}
+		
+		//navigation
+		public function navigate(par:String):void {
+			
+			if (caller == 1 || caller == 0) {
+				searchCity(0, parseInt(par));
+			} else if (caller == 2 || caller == 3) {
+				searchParty(3, parseInt(par));
+			}
+		}
+		
+		public function onDoubleClick():void {
+			var pojo:LfmPojo = searchResults.eList.listEvent.selectedItem as LfmPojo;
+			map.service.setCenter(new LatLng(pojo.lat,pojo.long), 13);
+			map.service.setZoom(100, true);
 		}
 		
 		public function set mainSearch(o:MainSearch):void {
