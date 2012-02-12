@@ -1,5 +1,8 @@
 package com.ws.darkstar.service;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ResourceBundle;
 import java.util.Set;
 
 import org.json.simple.JSONArray;
@@ -30,8 +33,23 @@ public class XService {
 		return done;
 	}
 	
-	public static JSONArray loadJSON(String path, String param) {
-		return XJSONParserFactory.valueOf(param).parse(path);
+	public static String loadJSON(String path, String param) {
+		
+		String output = ResourceBundle.getBundle("xtractor").getString("json.output");
+		boolean done = false;
+		
+		try {
+			FileWriter fileWriter = new FileWriter(output);
+			
+			XJSONParserFactory.valueOf(param).parse(path).writeJSONString(fileWriter);
+			
+			done = true;
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		return done ? "File saved at "+output : "Error creating "+output;
 	}
 	
 	public static void showCollectionsNames() {
@@ -82,6 +100,12 @@ public class XService {
 		String idEndereco = "33641344";
 		
 		System.out.println(dao.update(idEndereco));
+	}
+	
+	public static void drop() {
+		XMongoDAO dao = new XMongoDAO();
+		dao.drop();
+		getCollectionCount();
 	}
 	
 	public static void closeMongo() {

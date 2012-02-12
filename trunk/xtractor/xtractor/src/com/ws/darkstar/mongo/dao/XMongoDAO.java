@@ -7,7 +7,6 @@ import java.util.Set;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
-import com.mongodb.WriteResult;
 import com.ws.darkstar.mongo.connection.XMongoConnection;
 
 public class XMongoDAO {
@@ -91,6 +90,10 @@ public class XMongoDAO {
 		xConn.getCollection(collectionName).update(new BasicDBObject().append("id_endereco", id), dbo);
 		
 		return findById(id);
+	}
+	
+	public void drop() {
+		xConn.getCollection(collectionName).drop();
 	}
 	
 	public void closeMongo() {
