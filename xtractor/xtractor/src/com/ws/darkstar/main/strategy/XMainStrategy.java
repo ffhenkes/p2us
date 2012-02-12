@@ -1,7 +1,5 @@
 package com.ws.darkstar.main.strategy;
 
-import org.json.simple.JSONArray;
-
 import com.ws.darkstar.service.XService;
 
 public enum XMainStrategy {
@@ -10,8 +8,8 @@ public enum XMainStrategy {
 
 		@Override
 		public void go(String[] params) {
-			JSONArray jsonArray = XService.loadJSON(params[1], params[2]);
-			System.out.println(jsonArray.toString());
+			String response = XService.loadJSON(params[1], params[2]);
+			System.out.println(response);
 		}
 		
 	},
@@ -85,6 +83,15 @@ public enum XMainStrategy {
 		public void go(String[] params) {
 			XService.update();
 			
+		}
+		
+	},
+	
+	DROP_COLLECTION {
+
+		@Override
+		public void go(String[] params) {
+			XService.drop();
 		}
 		
 	};

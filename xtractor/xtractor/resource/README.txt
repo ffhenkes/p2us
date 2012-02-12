@@ -27,3 +27,6 @@
  
   --UPDATE. Under development
  #java -jar xtractor.jar UPDATE
+ 
+ --Drop configured collection
+ #java -jar xtractor.jar DROP_COLLECTION
