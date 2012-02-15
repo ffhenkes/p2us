@@ -2,6 +2,7 @@ package com.ws.darkstar.service;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.Set;
 
@@ -13,6 +14,38 @@ import com.ws.darkstar.parser.XMongoParser;
 import com.ws.darkstar.parser.factory.XJSONParserFactory;
 
 public class XService {
+	
+	public static boolean loadMongoMultiple(Map<?, ?> map) {
+		
+		String path = (String) map.get("path");
+		String prefix = (String) map.get("prefix");
+		String list = (String) map.get("list");
+		
+		String[] values = list.split(";");
+		
+		XMongoParser xMongoParser = new XMongoParser();
+		
+		XMongoDAO xMongoDAO = new XMongoDAO();
+		
+		boolean done = false;
+		Set<BasicDBObject> setObjects;
+		
+		int counter = 0;
+		for (String file : values) {
+			 setObjects = null;
+			 setObjects = xMongoParser.parse(path+prefix+file);
+			for (BasicDBObject basicDBObject : setObjects) {
+				done = xMongoDAO.insert(basicDBObject);
+			}
+			
+			System.out.println("cicle ended! "+done);
+			
+			counter++;
+		}
+		
+		return done;
+		
+	}
 	
 	public static boolean loadMongo(String path) {
 		

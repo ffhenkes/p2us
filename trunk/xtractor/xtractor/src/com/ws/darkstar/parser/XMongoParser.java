@@ -1,9 +1,11 @@
 package com.ws.darkstar.parser;
 
-import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -23,6 +25,8 @@ public class XMongoParser implements IParser<String, Set<BasicDBObject>>{
 	
 	private Boolean randomAttribute = Boolean.parseBoolean(ResourceBundle.getBundle("xtractor").getString("mongo.randomattribute"));
 	
+	private long position = 0;
+	
 	@SuppressWarnings("unchecked")
 	@Override
 	public Set<BasicDBObject> parse(String p) {
@@ -30,22 +34,43 @@ public class XMongoParser implements IParser<String, Set<BasicDBObject>>{
 		String separator = ResourceBundle.getBundle("xtractor").getString("csv.separator");
 		
 		try {
-			BufferedReader bufferedReader = new BufferedReader(new FileReader(p));
 			
-			String line = bufferedReader.readLine();
+			File file = new File(p);
+			
+			RandomAccessFile randomFile = new RandomAccessFile(file, "r");
+			
+			FileChannel inChannel = randomFile.getChannel();
+			
+			ByteBuffer buffer = ByteBuffer.allocate(256);
+			
+			int bytesRead = inChannel.read(buffer);
 			
 			int counter=0;
 			
-			while (line != null) {
+			System.out.println("parser!");
+			
+			while (bytesRead != -1) {
+				buffer.flip();
 				
+				StringBuilder line = new StringBuilder();
+				
+				while (buffer.hasRemaining()) {
+					line.append((char) buffer.get());
+				}
+				
+				long index = line.indexOf("\n");
+				line.deleteCharAt((int)index);
+
+				position = position+index+1;
+				
+				line.delete((int)index, line.length());
+
 				Map<Integer, Object> hashMap = new HashMap<Integer, Object>();
 				hashMap.put(counter, line);
 				hashMap.put(-1, separator);
 				hashMap.put(-2, mongoBean);
 				hashMap.put(-3, counter);
 				hashMap.put(-4, isRandomAttribute());
-				
-				System.out.println("counter >> "+counter);
 				
 				hashMap = (Map<Integer, Object>) XCsvParserStrategy.valueOf((counter < 1) ? XConstants.MATTRIBUTES : XConstants.MVALUES).parse(hashMap);
 				
@@ -54,10 +79,17 @@ public class XMongoParser implements IParser<String, Set<BasicDBObject>>{
 				if (counter > 0)
 					setBasicObjects.add(mongoBean.getBasicObject());
 				
-				line = bufferedReader.readLine();
+				buffer.clear();
+				
+				inChannel.position(position);
+				
+				bytesRead = inChannel.read(buffer);
+				
 				counter++;
 			}
 			
+			randomFile.close();
+			inChannel.close();
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block

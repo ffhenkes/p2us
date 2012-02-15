@@ -8,7 +8,10 @@
  #java -jar xtractor.jar EXPORT_JSON CSV 
  
  --Import a csv file to mongo defined in xtractor.properties
- #java -jar xtractor.jar IMPORT_MONGO CSV 
+ #java -jar xtractor.jar IMPORT_MONGO
+ 
+ --Import multiple csv files to mongo as defined in xtractor.properties (uses path, prefix, and list. the list are the filenames to import, must use ; as separator).
+ #java -jar xtractor.jar IMPORT_MONGO_MULTIPLE 
  
  --Show all collections from mongo connected db defined in xtractor.properties
  #java -jar xtractor.jar SHOW_COLLECTIONS  
