@@ -1,5 +1,7 @@
 package com.ws.darkstar.main.strategy;
 
+import java.util.ResourceBundle;
+
 import com.ws.darkstar.service.XService;
 
 public enum XMainStrategy {
@@ -8,7 +10,7 @@ public enum XMainStrategy {
 
 		@Override
 		public void go(String[] params) {
-			String response = XService.loadJSON(params[1], params[2]);
+			String response = XService.loadJSON(ResourceBundle.getBundle("xtractor").getString("csv.path"), params[1]);
 			System.out.println(response);
 		}
 		
@@ -19,8 +21,9 @@ public enum XMainStrategy {
 		@Override
 		public void go(String[] params) {
 			
-			if (XService.loadMongo(params[1])) 
+			if (XService.loadMongo(ResourceBundle.getBundle("xtractor").getString("csv.path"))) 
 				System.out.println("done!");
+			
 			else
 				System.out.println("error");
 		}
