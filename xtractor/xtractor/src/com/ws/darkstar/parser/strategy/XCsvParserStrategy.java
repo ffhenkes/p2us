@@ -67,7 +67,7 @@ public enum XCsvParserStrategy {
 		@Override
 		public Map<?, ?> parse(Map<?, ?> map) {
 			MongoBean mongoBean = (MongoBean) map.get(-2);
-			String line = (String) map.get(map.get(-3));
+			String line = (String) map.get(map.get(-3)).toString();
 			
 			Boolean useRandom = (Boolean) map.get(-4);
 			
@@ -91,7 +91,7 @@ public enum XCsvParserStrategy {
 		@Override
 		public Map<?, ?> parse(Map<?, ?> map) {
 			
-			String line = (String) map.get(map.get(-3));
+			String line = (String) map.get(map.get(-3)).toString();
 			
 			Boolean useRandom = (Boolean) map.get(-4);
 			
@@ -99,6 +99,8 @@ public enum XCsvParserStrategy {
 				Double randomAttribute = Math.random();
 				line+=map.get(-1)+randomAttribute.toString();
 			}
+			
+			System.out.println(line);
 			
 			String[] values = line.trim().split((String) map.get(-1));
 			

@@ -1,5 +1,7 @@
 package com.ws.darkstar.main.strategy;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 import com.ws.darkstar.service.XService;
@@ -23,9 +25,27 @@ public enum XMainStrategy {
 			
 			if (XService.loadMongo(ResourceBundle.getBundle("xtractor").getString("csv.path"))) 
 				System.out.println("done!");
-			
 			else
 				System.out.println("error");
+		}
+		
+	},
+	
+	IMPORT_MONGO_MULTIPLE {
+
+		@Override
+		public void go(String[] params) {
+			
+			Map<String, String> map = new HashMap<String, String>();
+			map.put("path", ResourceBundle.getBundle("xtractor").getString("csv.path"));
+			map.put("prefix", ResourceBundle.getBundle("xtractor").getString("csv.prefix"));
+			map.put("list", ResourceBundle.getBundle("xtractor").getString("csv.list"));
+			
+				if (XService.loadMongoMultiple(map)) 
+					System.out.println("done!");
+				else
+					System.out.println("error");
+			
 		}
 		
 	},
