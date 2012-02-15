@@ -5,8 +5,6 @@ import java.io.IOException;
 import java.util.ResourceBundle;
 import java.util.Set;
 
-import org.json.simple.JSONArray;
-
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;

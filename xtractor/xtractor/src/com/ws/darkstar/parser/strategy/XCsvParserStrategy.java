@@ -1,5 +1,6 @@
 package com.ws.darkstar.parser.strategy;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -67,6 +68,12 @@ public enum XCsvParserStrategy {
 		public Map<?, ?> parse(Map<?, ?> map) {
 			MongoBean mongoBean = (MongoBean) map.get(-2);
 			String line = (String) map.get(map.get(-3));
+			
+			Boolean useRandom = (Boolean) map.get(-4);
+			
+			if (useRandom)
+				line+=map.get(-1)+"randomAttribute";
+			
 			mongoBean.setAttributes(line.trim().replaceAll(" ", "").split((String) map.get(-1)));
 			
 			Map<Integer, Object> hashMap = new HashMap<Integer, Object>();
@@ -85,6 +92,14 @@ public enum XCsvParserStrategy {
 		public Map<?, ?> parse(Map<?, ?> map) {
 			
 			String line = (String) map.get(map.get(-3));
+			
+			Boolean useRandom = (Boolean) map.get(-4);
+			
+			if (useRandom) {
+				Double randomAttribute = Math.random();
+				line+=map.get(-1)+randomAttribute.toString();
+			}
+			
 			String[] values = line.trim().split((String) map.get(-1));
 			
 			MongoBean mongoBean = (MongoBean) map.get(-2);
