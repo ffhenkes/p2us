@@ -21,6 +21,8 @@ public class XMongoParser implements IParser<String, Set<BasicDBObject>>{
 	
 	private Set<BasicDBObject> setBasicObjects = new HashSet<BasicDBObject>();
 	
+	private Boolean randomAttribute = Boolean.parseBoolean(ResourceBundle.getBundle("xtractor").getString("mongo.randomattribute"));
+	
 	@SuppressWarnings("unchecked")
 	@Override
 	public Set<BasicDBObject> parse(String p) {
@@ -41,6 +43,7 @@ public class XMongoParser implements IParser<String, Set<BasicDBObject>>{
 				hashMap.put(-1, separator);
 				hashMap.put(-2, mongoBean);
 				hashMap.put(-3, counter);
+				hashMap.put(-4, isRandomAttribute());
 				
 				System.out.println("counter >> "+counter);
 				
@@ -56,7 +59,6 @@ public class XMongoParser implements IParser<String, Set<BasicDBObject>>{
 			}
 			
 			
-			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -66,6 +68,14 @@ public class XMongoParser implements IParser<String, Set<BasicDBObject>>{
 		}
 		
 		return setBasicObjects;
+	}
+
+	public Boolean isRandomAttribute() {
+		return randomAttribute;
+	}
+
+	public void setRandomAttribute(Boolean randomAttribute) {
+		this.randomAttribute = randomAttribute;
 	}
 	
 }
