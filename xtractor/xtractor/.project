@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>xfiles</name>
+			<type>2</type>
+			<location>C:/dev/work/xfiles</location>
+		</link>
+	</linkedResources>
 </projectDescription>

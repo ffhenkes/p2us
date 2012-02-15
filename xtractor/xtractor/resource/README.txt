@@ -5,10 +5,10 @@
 
 
  --Import a csv file and export a JSONArray. 
- #java -jar xtractor.jar EXPORT_JSON /csvpath/geodebug.csv CSV 
+ #java -jar xtractor.jar EXPORT_JSON CSV 
  
  --Import a csv file to mongo defined in xtractor.properties
- #java -jar xtractor.jar IMPORT_MONGO /csvpath/geodebug.csv CSV 
+ #java -jar xtractor.jar IMPORT_MONGO CSV 
  
  --Show all collections from mongo connected db defined in xtractor.properties
  #java -jar xtractor.jar SHOW_COLLECTIONS  
@@ -22,7 +22,7 @@
  --Show a count(*) from mongo db connected and collection defined in xtractor.properties
  #java -jar xtractor.jar GET_COLLECTION_COUNT
  
- --For developers use. Create a method in the XService and switch the implementation manually in the XMainStrategy enum.
+ --For developers use. Create a static method in the XService and switch the implementation manually in the XMainStrategy Enum.
  #java -jar xtractor.jar QUERY idFind
  
   --UPDATE. Under development
