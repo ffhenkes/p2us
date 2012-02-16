@@ -6,7 +6,6 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.Set;
 
-import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.ws.darkstar.mongo.dao.XMongoDAO;
@@ -25,21 +24,12 @@ public class XService {
 		
 		XMongoParser xMongoParser = new XMongoParser();
 		
-		XMongoDAO xMongoDAO = new XMongoDAO();
-		
 		boolean done = false;
-		Set<BasicDBObject> setObjects;
 		
 		int counter = 0;
 		for (String file : values) {
-			 setObjects = null;
-			 setObjects = xMongoParser.parse(path+prefix+file);
-			for (BasicDBObject basicDBObject : setObjects) {
-				done = xMongoDAO.insert(basicDBObject);
-			}
-			
-			System.out.println("cicle ended! "+done);
-			
+			 done = xMongoParser.parse(path+prefix+file);
+			 System.out.println("cicle ended! "+file+" >>"+done);
 			counter++;
 		}
 		
@@ -48,20 +38,8 @@ public class XService {
 	}
 	
 	public static boolean loadMongo(String path) {
-		
 		XMongoParser xMongoParser = new XMongoParser();
-		
-		Set<BasicDBObject> setBasicObjects = xMongoParser.parse(path);
-
-		XMongoDAO xMongoDAO = new XMongoDAO();
-		
-		boolean done = false;
-		
-		for (BasicDBObject basicDBObject : setBasicObjects) {
-			done = xMongoDAO.insert(basicDBObject);
-		}
-		
-		return done;
+		return xMongoParser.parse(path);
 	}
 	
 	public static String loadJSON(String path, String param) {
