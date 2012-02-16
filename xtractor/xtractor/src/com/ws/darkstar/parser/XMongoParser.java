@@ -7,29 +7,29 @@ import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.ResourceBundle;
-import java.util.Set;
 
-import com.mongodb.BasicDBObject;
+import com.ws.darkstar.mongo.dao.XMongoDAO;
 import com.ws.darkstar.parser.bean.MongoBean;
 import com.ws.darkstar.parser.constant.XConstants;
 import com.ws.darkstar.parser.strategy.XCsvParserStrategy;
 
-public class XMongoParser implements IParser<String, Set<BasicDBObject>>{
+public class XMongoParser implements IParser<String, Boolean>{
 	
 	private MongoBean mongoBean = new MongoBean();
-	
-	private Set<BasicDBObject> setBasicObjects = new HashSet<BasicDBObject>();
 	
 	private Boolean randomAttribute = Boolean.parseBoolean(ResourceBundle.getBundle("xtractor").getString("mongo.randomattribute"));
 	
 	private long position = 0;
 	
+	private XMongoDAO dao = new XMongoDAO();
+	
 	@SuppressWarnings("unchecked")
 	@Override
-	public Set<BasicDBObject> parse(String p) {
+	public Boolean parse(String p) {
+		
+		Boolean done = false;
 		
 		String separator = ResourceBundle.getBundle("xtractor").getString("csv.separator");
 		
@@ -77,7 +77,8 @@ public class XMongoParser implements IParser<String, Set<BasicDBObject>>{
 				mongoBean = (MongoBean) hashMap.get(-2);
 				
 				if (counter > 0)
-					setBasicObjects.add(mongoBean.getBasicObject());
+					dao.insert(mongoBean.getBasicObject());
+					//setBasicObjects.add(mongoBean.getBasicObject());
 				
 				buffer.clear();
 				
@@ -90,6 +91,7 @@ public class XMongoParser implements IParser<String, Set<BasicDBObject>>{
 			
 			randomFile.close();
 			inChannel.close();
+			done = true;
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -99,7 +101,7 @@ public class XMongoParser implements IParser<String, Set<BasicDBObject>>{
 			e.printStackTrace();
 		}
 		
-		return setBasicObjects;
+		return done;
 	}
 
 	public Boolean isRandomAttribute() {
