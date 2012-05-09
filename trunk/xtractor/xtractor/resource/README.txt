@@ -1,4 +1,3 @@
-
  --For CSV import/export. The CSV file must contain a defined separator in the xtractor.properties file(don't use pipe "|"), must have the first row with the desired JSON/MONGO attributes.
 
  --The second row and the last as well must contain the desired values for fill the attributes. Empty or dirty rows will return exceptions.
