@@ -70,8 +70,13 @@ public enum XCsvParserStrategy {
 			
 			Boolean useRandom = (Boolean) map.get(-4);
 			
+			Boolean useCustom = (Boolean) map.get(-5);
+			
 			if (useRandom)
 				line+=map.get(-1)+"randomAttribute";
+			
+			if (useCustom)
+				line=(String) map.get(-6)+map.get(-1)+line;
 			
 			mongoBean.setAttributes(line.trim().replaceAll(" ", "").split((String) map.get(-1)));
 			
@@ -94,9 +99,15 @@ public enum XCsvParserStrategy {
 			
 			Boolean useRandom = (Boolean) map.get(-4);
 			
+			Boolean useCustom = (Boolean) map.get(-5);
+			
 			if (useRandom) {
 				Double randomAttribute = Math.random();
 				line+=map.get(-1)+randomAttribute.toString();
+			}
+			
+			if (useCustom) {
+				line=(String) map.get(-7)+map.get(-1)+line;
 			}
 			
 			System.out.println(line);

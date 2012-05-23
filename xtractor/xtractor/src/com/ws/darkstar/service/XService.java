@@ -26,11 +26,12 @@ public class XService {
 		
 		boolean done = false;
 		
-		int counter = 0;
+		//int counter = 0;
+		
 		for (String file : values) {
-			 done = xMongoParser.parse(path+prefix+file);
-			 System.out.println("cicle ended! "+file+" >>"+done);
-			counter++;
+			done = xMongoParser.parse(path+prefix+file);
+			System.out.println("cicle ended! "+file+" >>"+done);
+			//counter++;
 		}
 		
 		return done;
@@ -95,20 +96,18 @@ public class XService {
 		return dao.getCollectionCount(); 
 	}
 	
-	
-	public static void findByFlProcessamento(String param) {
+	public static void findByParam(String field, String param) {
 		XMongoDAO dao = new XMongoDAO();
 		
-		for (DBObject dbo : dao.findByFlProcessamento(param)) {
+		for (DBObject dbo : dao.findByParam(field, param)) {
 			System.out.println(dbo);
 		}
 	}
 	
-	public static void update() {
+	public static void update(String field, String param, String id) {
 		XMongoDAO dao = new XMongoDAO();
-		String idEndereco = "33641344";
 		
-		System.out.println(dao.update(idEndereco));
+		System.out.println(dao.update(field, param, id));
 	}
 	
 	public static void drop() {
