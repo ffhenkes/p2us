@@ -36,15 +36,16 @@ public enum XMainStrategy {
 		@Override
 		public void go(String[] params) {
 			
+			String result = "";
+			
 			Map<String, String> map = new HashMap<String, String>();
 			map.put("path", ResourceBundle.getBundle("xtractor").getString("csv.path"));
 			map.put("prefix", ResourceBundle.getBundle("xtractor").getString("csv.prefix"));
 			map.put("list", ResourceBundle.getBundle("xtractor").getString("csv.list"));
 			
-				if (XService.loadMongoMultiple(map)) 
-					System.out.println("done!");
-				else
-					System.out.println("error");
+			result = XService.loadMongoMultiple(map) ? "done" : "error";
+			
+			System.out.println(result);
 			
 		}
 		
@@ -94,17 +95,17 @@ public enum XMainStrategy {
 
 		@Override
 		public void go(String[] params) {
-			XService.findByFlProcessamento(params[1]);
+			XService.findByParam(params[1], params[2]);
 			
 		}
 		
 	},
-	
+		
 	UPDATE {
 
 		@Override
 		public void go(String[] params) {
-			XService.update();
+			XService.update(params[1], params[2], params[3]);
 			
 		}
 		
@@ -121,7 +122,5 @@ public enum XMainStrategy {
 	
 	public abstract void go(String[] params);
 	
-	private XMainStrategy() {
-		
-	}
+	private XMainStrategy() {}
 }

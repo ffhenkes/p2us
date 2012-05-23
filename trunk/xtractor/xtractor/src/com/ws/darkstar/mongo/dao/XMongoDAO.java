@@ -68,6 +68,23 @@ public class XMongoDAO {
 		
 	}
 	
+	public Set<DBObject> findByParam(String field, String param) {
+		
+		Set<DBObject> setBasicObjects = new HashSet<DBObject>();
+		
+		BasicDBObject query = new BasicDBObject();
+		query.put(field, param);
+		
+		DBCursor cursor = xConn.getCollection(collectionName).find(query);
+		
+		while (cursor.hasNext()) {
+			setBasicObjects.add(cursor.next());
+		}
+		
+		return setBasicObjects;
+		
+	}
+	
 	public DBObject findById(String id) {
 		BasicDBObject query = new BasicDBObject();
 		query.put("id_endereco", id);
@@ -83,11 +100,11 @@ public class XMongoDAO {
 		return dbObject;
 	}
 	
-	public DBObject update(String id) {
+	public DBObject update(String field, String param, String id) {
 		DBObject dbo = findById(id);
-		dbo.put("fl_processamento", "7");
+		dbo.put(field, param);
 		
-		xConn.getCollection(collectionName).update(new BasicDBObject().append("id_endereco", id), dbo);
+		xConn.getCollection(collectionName).update(new BasicDBObject().append(field, id), dbo);
 		
 		return findById(id);
 	}

@@ -21,6 +21,12 @@ public class XMongoParser implements IParser<String, Boolean>{
 	
 	private Boolean randomAttribute = Boolean.parseBoolean(ResourceBundle.getBundle("xtractor").getString("mongo.randomattribute"));
 	
+	private Boolean customAttribute = Boolean.parseBoolean(ResourceBundle.getBundle("xtractor").getString("mongo.customattribute"));
+	
+	private String customAttributeName = ResourceBundle.getBundle("xtractor").getString("mongo.customattribute.name");
+	
+	private String customAttributeValue = ResourceBundle.getBundle("xtractor").getString("mongo.customattribute.value");
+	
 	private long position = 0;
 	
 	private XMongoDAO dao = new XMongoDAO();
@@ -59,6 +65,7 @@ public class XMongoParser implements IParser<String, Boolean>{
 				}
 				
 				long index = line.indexOf("\n");
+				
 				line.deleteCharAt((int)index);
 
 				position = position+index+1;
@@ -71,6 +78,9 @@ public class XMongoParser implements IParser<String, Boolean>{
 				hashMap.put(-2, mongoBean);
 				hashMap.put(-3, counter);
 				hashMap.put(-4, isRandomAttribute());
+				hashMap.put(-5, isCustomAttribute());
+				hashMap.put(-6, getCustomAttributeName());
+				hashMap.put(-7, getCustomAttributeValue());
 				
 				hashMap = (Map<Integer, Object>) XCsvParserStrategy.valueOf((counter < 1) ? XConstants.MATTRIBUTES : XConstants.MVALUES).parse(hashMap);
 				
@@ -107,9 +117,37 @@ public class XMongoParser implements IParser<String, Boolean>{
 	public Boolean isRandomAttribute() {
 		return randomAttribute;
 	}
+	
+	public Boolean isCustomAttribute() {
+		return customAttribute;
+	}
 
 	public void setRandomAttribute(Boolean randomAttribute) {
 		this.randomAttribute = randomAttribute;
+	}
+
+	public Boolean getCustomAttribute() {
+		return customAttribute;
+	}
+
+	public void setCustomAttribute(Boolean customAttribute) {
+		this.customAttribute = customAttribute;
+	}
+
+	public String getCustomAttributeName() {
+		return customAttributeName;
+	}
+
+	public void setCustomAttributeName(String customAttributeName) {
+		this.customAttributeName = customAttributeName;
+	}
+
+	public String getCustomAttributeValue() {
+		return customAttributeValue;
+	}
+
+	public void setCustomAttributeValue(String customAttributeValue) {
+		this.customAttributeValue = customAttributeValue;
 	}
 	
 }
